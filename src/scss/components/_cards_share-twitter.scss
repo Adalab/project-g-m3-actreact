@@ -1,0 +1,74 @@
+.share__text-twitter{
+  @include centered ();
+  flex-direction: column;
+}
+.hidden{
+  display: none;
+}
+.share__title-twitter{
+  text-transform: lowercase;
+  color: $intermediate-grey;
+  font-size: $font-md;
+  margin-top: 20px;
+}
+.share__title-twitter::first-letter{
+  text-transform: uppercase;
+}
+.link-twitter .twitter-url{
+  margin-top: 5px;
+  display: flex;
+  text-align: center;
+  font-size: $font-xs;
+  text-transform: lowercase;
+  color: $dull-orange;
+}
+.button-twitter{
+  background-color: $twittwe-blue;
+  height: 30px;
+  color: $white;
+  border-radius: 3px;
+  padding: 3px 15px;
+  font-size: 14px;
+  font-family: $OpenSans;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  position: relative;
+  @include centered ();
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+}
+.line-bottom{
+  border-bottom: solid 1px #d8d8d8;
+  margin-top: 0px;
+}
+.text-link-twitter{
+  text-transform: lowercase;
+  padding-left: 9px;
+}
+.text-link-twitter:before{
+  text-transform: lowercase;
+  content: "\f099";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Brands";
+  color: $white;
+}
+.text-link-twitter::first-letter{
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  margin-left: 10px;
+  padding: 0px;
+}
+.content__twitter-container{
+  .line-bottom{
+  border-bottom: solid 1px #d8d8d8;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  }
+}
+@media all and (min-width:768px){
+  .share__fieldset .container{
+    margin-right: 30px;
+  }
+}
