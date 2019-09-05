@@ -11,7 +11,7 @@ class Cards extends React.Component {
           <CardsHeader />
           <CardsMain />
         </div>
-          <Footer />
+        <Footer />
       </React.Fragment>
     );
   }

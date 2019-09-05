@@ -1,13 +1,11 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./App.scss";
 // import Landing from './components/Landing';
-import Cards from './components/Cards';
+import Cards from "./components/Cards";
 
 class App extends React.Component {
   render() {
-    return (
-        <Cards />
-    );
+    return <Cards />;
   }
 }
 
