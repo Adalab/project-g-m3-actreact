@@ -15,19 +15,19 @@ class CardsMainCardPreview extends React.Component {
             </button>
             <div className="cards__img-wrapper cards__img-wrapper-op1">
               <div className="img__text-box">
-                <h2 className="img__title img-text__title">Nombre Apellido</h2>
+                <h2 className="img__title img-text__title">{this.props.data.name}</h2>
 
                 <p className="img__text img-text__subtitle">
-                  Front-end developer
+                  {this.props.data.job}
                 </p>
               </div>
               <div
                 className="profile__image js__profile-container-image cards__img"
-                style={{ backgroundImage: "url(" + defaultImage + ")" }}
+                style={{ backgroundImage: `url("${this.props.data.image}")` }}
               >
                 <img
                   className="image js__profile-image"
-                  src={defaultImage}
+                  src={this.props.data.image}
                   alt="Imagen por defecto"
                 />
               </div>
@@ -37,8 +37,10 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href="#mail"
+                      href={this.props.data.mail}
                       target="_blank"
+                      rel="noopener noreferrer"
+
                     >
                       <span className="span__text">
                         Si quieres enviarme un mail, visita este enlace.
@@ -49,8 +51,9 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href="#phone"
+                      href={this.props.data.phone}
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <span className="span__text">
                         Si quieres llamarme, este es mi número.
@@ -61,8 +64,10 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
-                      href="#linkedin"
+                      href={this.props.data.linkedin}
                       target="_blank"
+                      rel="noopener noreferrer"
+
                     >
                       <span className="span__text">
                         Si quieres ver mi perfil de linkedIn, visita este
@@ -74,8 +79,10 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
-                      href="#github"
+                      href={this.props.data.github}
                       target="_blank"
+                      rel="noopener noreferrer"
+
                     >
                       <span className="span__text">
                         Si quieres ver mi perfil de linkedIn, visita este
@@ -92,5 +99,17 @@ class CardsMainCardPreview extends React.Component {
     );
   }
 }
+
+CardsMainCardPreview.defaultProps={
+  name:'Nombre Apellido',
+  job: 'Front-end developer',
+  mail: '#mail',
+  phone: '#phone',
+  linkedin:'#linkedin',
+  github:'#github',
+  image:defaultImage
+}
+
+
 
 export default CardsMainCardPreview;
