@@ -10,17 +10,30 @@ class App extends React.Component {
     super(props);
       this.state = {
         name: '',
-        job: '',
-        mail: '',
-        phone: '',
-        linkedin: 'jaksjaks',
+        position: '',
+        email: '',
+        telf: '',
+        linkedin: '',
         github: '',
         image: defaultImage
-      }
+      };
     
+      this.changePreview = this.changePreview.bind(this)
+  }
+
+  changePreview(event) {
+    const value = event.currentTarget.value;
+    const id = event.currentTarget.id;
+    this.setState( {
+      [id] : value
+    }
+    )
+    ;
   }
   render() {
-    return <Cards state = {this.state} />;
+    return <Cards 
+    state = {this.state} 
+    changePreview = {this.changePreview}/>;
   }
 }
 
