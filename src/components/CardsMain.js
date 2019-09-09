@@ -18,7 +18,10 @@ class CardsMain extends React.Component {
           <CardsMainCardPreview state={this.props.state} />
 
           <div className="form__wrapper">
-            <CardsMainDesign />
+            <CardsMainDesign
+            state = {this.props.state}  
+            selected={this.props.state.selected}
+            handleOptionChange = {this.props.handleOptionChange}/>
 
             <CardsMainFill
               changePreview={this.props.changePreview} />
