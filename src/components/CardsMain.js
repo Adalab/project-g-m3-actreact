@@ -23,8 +23,6 @@ class CardsMain extends React.Component {
             <CardsMainFill
               changePreview={this.props.changePreview} />
 
-            />
-
             <CardsMainShare />
           </div>
         </form>
