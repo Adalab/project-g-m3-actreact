@@ -9,7 +9,7 @@ class Cards extends React.Component {
       <React.Fragment>
         <div className="cards__main-wrapper">
           <CardsHeader />
-          <CardsMain />
+          <CardsMain state = {this.props.state} />
         </div>
         <Footer />
       </React.Fragment>

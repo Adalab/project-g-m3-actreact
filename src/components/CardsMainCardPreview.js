@@ -15,19 +15,19 @@ class CardsMainCardPreview extends React.Component {
             </button>
             <div className="cards__img-wrapper cards__img-wrapper-op1">
               <div className="img__text-box">
-                <h2 className="img__title img-text__title">{this.props.data.name}</h2>
+                <h2 className="img__title img-text__title">{this.props.state.name}</h2>
 
                 <p className="img__text img-text__subtitle">
-                  {this.props.data.job}
+                  {this.props.state.job}
                 </p>
               </div>
               <div
                 className="profile__image js__profile-container-image cards__img"
-                style={{ backgroundImage: `url("${this.props.data.image}")` }}
+                style={{ backgroundImage: `url("${this.props.state.image}")` }}
               >
                 <img
                   className="image js__profile-image"
-                  src={this.props.data.image}
+                  src={this.props.state.image}
                   alt="Imagen por defecto"
                 />
               </div>
@@ -37,7 +37,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href={this.props.data.mail}
+                      href={this.props.state.mail}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -51,7 +51,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={this.props.data.phone}
+                      href={this.props.state.phone}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -64,7 +64,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
-                      href={this.props.data.linkedin}
+                      href={this.props.state.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -79,7 +79,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
-                      href={this.props.data.github}
+                      href={this.props.state.github}
                       target="_blank"
                       rel="noopener noreferrer"
 

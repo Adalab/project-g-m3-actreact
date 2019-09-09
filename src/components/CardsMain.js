@@ -3,23 +3,10 @@ import CardsMainCardPreview from "./CardsMainCardPreview";
 import CardsMainDesign from "./CardsMainDesign";
 import CardsMainFill from "./CardsMainFill";
 import CardsMainShare from "./CardsMainShare";
-import defaultImage from "./DefaultImage"
 
 
 class CardsMain extends React.Component {
-  constructor(props){
-    super(props);
-      this.state = {
-        name: '',
-        job: '',
-        mail: '',
-        phone: '',
-        linkedin: '',
-        github: '',
-        image: defaultImage
-      }
-    
-  }
+  
 
   render() {
     return (
@@ -28,7 +15,7 @@ class CardsMain extends React.Component {
           className="form__all-sections form__section-fill"
           onSubmit="writeUrl()"
         >
-          <CardsMainCardPreview data = {this.state}/>
+          <CardsMainCardPreview state = {this.props.state}/>
 
           <div className="form__wrapper">
             <CardsMainDesign />
