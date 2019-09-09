@@ -18,7 +18,7 @@ class CardsMainCardPreview extends React.Component {
                 <h2 className="img__title img-text__title">{this.props.state.name}</h2>
 
                 <p className="img__text img-text__subtitle">
-                  {this.props.state.job}
+                  {this.props.state.position}
                 </p>
               </div>
               <div
@@ -33,11 +33,11 @@ class CardsMainCardPreview extends React.Component {
               </div>
               <div className="img__icons-box">
                 <ul className="icons__list img-text__title">
-                  <li className="icon1 hidden">
+                  <li className={`icon1 ${this.props.state.email ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href={this.props.state.mail}
+                      href={this.props.state.email}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -47,11 +47,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className="icon2 hidden">
+                  <li className={`icon2 ${this.props.state.telf ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={this.props.state.phone}
+                      href={this.props.state.telf}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -60,7 +60,7 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className="icon3 hidden">
+                  <li className={`icon3 ${this.props.state.linkedin ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
@@ -75,7 +75,7 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className="icon4 hidden">
+                  <li className={`icon4 ${this.props.state.github ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "

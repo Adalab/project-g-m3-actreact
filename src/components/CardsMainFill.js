@@ -37,6 +37,7 @@ class CardsMainFill extends React.Component {
               name="position"
               placeholder="Ej: Front-end unicorn"
               required
+              onChange = {this.props.changePreview}
             />
             <div className="form__fieldset-add_img_wrapper">
               <p className="form__fieldset-add_img-text">Imagen de perfil</p>
@@ -69,6 +70,7 @@ class CardsMainFill extends React.Component {
               name="email"
               placeholder="Ej: sally-hill@gmail.com"
               required
+              onChange = {this.props.changePreview}
             />
             <label htmlFor="telf" className="form__fieldset-content">
               Teléfono
@@ -79,6 +81,7 @@ class CardsMainFill extends React.Component {
               id="telf"
               name="telf"
               placeholder="Ej: 555-55-55-55"
+              onChange = {this.props.changePreview}
             />
             <label
               htmlFor="linkedin"
@@ -93,6 +96,7 @@ class CardsMainFill extends React.Component {
               name="linkedin"
               placeholder="Ej: sally.hill"
               required
+              onChange = {this.props.changePreview}
             />
             <label
               htmlFor="github"
@@ -107,6 +111,7 @@ class CardsMainFill extends React.Component {
               name="github"
               placeholder="Ej: @sally-hill"
               required
+              onChange = {this.props.changePreview}
             />
           </div>
           <div className="line-bottom"></div>
