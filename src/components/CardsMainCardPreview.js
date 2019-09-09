@@ -6,7 +6,7 @@ class CardsMainCardPreview extends React.Component {
     super(props);
 
     this.writeLinkedinUrl = this.writeLinkedinUrl.bind(this);
-    this.writegithubUrl = this.writegithubUrl.bind(this);
+    this.writeGithubUrl = this.writeGithubUrl.bind(this);
 
   }
   writeLinkedinUrl(inputValue) {
@@ -18,7 +18,7 @@ class CardsMainCardPreview extends React.Component {
     }
   }
 
-  writegithubUrl(inputValue) {
+  writeGithubUrl(inputValue) {
     if (inputValue.includes('@')) {
       const newInputValue = inputValue.replace('@', '');
       return 'https://github.com/' + newInputValue;
@@ -105,7 +105,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
-                      href={this.writegithubUrl(this.props.state.github)}
+                      href={this.writeGithubUrl(this.props.state.github)}
                       target="_blank"
                       rel="noopener noreferrer"
 
