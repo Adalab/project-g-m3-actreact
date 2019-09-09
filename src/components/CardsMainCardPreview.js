@@ -2,6 +2,32 @@ import React from "react";
 import defaultImage from "./DefaultImage";
 
 class CardsMainCardPreview extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.writeLinkedinUrl = this.writeLinkedinUrl.bind(this);
+    this.writegithubUrl = this.writegithubUrl.bind(this);
+
+  }
+  writeLinkedinUrl(inputValue) {
+    if (inputValue.includes('@')) {
+      const newInputValue = inputValue.replace('@', '');
+      return 'https://www.linkedin.com/in/' + newInputValue;
+    }else {
+      return 'https://www.linkedin.com/in/' + inputValue;
+    }
+  }
+
+  writegithubUrl(inputValue) {
+    if (inputValue.includes('@')) {
+      const newInputValue = inputValue.replace('@', '');
+      return 'https://github.com/' + newInputValue;
+    }else {
+      return 'https://github.com/' + inputValue;
+    }
+  }
+
+
   render() {
     return (
       <section className="cards__img-section">
@@ -37,7 +63,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href={this.props.state.email}
+                      href={`mailto:${this.props.state.email}`}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -51,7 +77,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={this.props.state.telf}
+                      href={`tel:${this.props.state.telf}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -64,7 +90,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
-                      href={this.props.state.linkedin}
+                      href={this.writeLinkedinUrl(this.props.state.linkedin)}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -79,7 +105,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
-                      href={this.props.state.github}
+                      href={this.writegithubUrl(this.props.state.github)}
                       target="_blank"
                       rel="noopener noreferrer"
 
