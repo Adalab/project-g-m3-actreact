@@ -13,7 +13,7 @@ class App extends React.Component {
         job: '',
         mail: '',
         phone: '',
-        linkedin: 'jaksjaks',
+        linkedin: '',
         github: '',
         image: defaultImage
       }
