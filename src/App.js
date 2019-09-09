@@ -16,11 +16,24 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         image: defaultImage
-      }
+      };
     
+      this.changePreview = this.changePreview.bind(this)
+  }
+
+  changePreview(event) {
+    const value = event.currentTarget.value;
+    const id = event.currentTarget.id;
+    this.setState( {
+      [id] : value
+    }
+    )
+    ;
   }
   render() {
-    return <Cards state = {this.state} />;
+    return <Cards 
+    state = {this.state} 
+    changePreview = {this.changePreview}/>;
   }
 }
 

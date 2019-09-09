@@ -6,7 +6,7 @@ import CardsMainShare from "./CardsMainShare";
 
 
 class CardsMain extends React.Component {
-  
+
 
   render() {
     return (
@@ -15,12 +15,15 @@ class CardsMain extends React.Component {
           className="form__all-sections form__section-fill"
           onSubmit="writeUrl()"
         >
-          <CardsMainCardPreview state = {this.props.state}/>
+          <CardsMainCardPreview state={this.props.state} />
 
           <div className="form__wrapper">
             <CardsMainDesign />
 
-            <CardsMainFill />
+            <CardsMainFill
+              changePreview={this.props.changePreview} />
+
+            />
 
             <CardsMainShare />
           </div>

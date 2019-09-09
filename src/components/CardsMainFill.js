@@ -22,6 +22,7 @@ class CardsMainFill extends React.Component {
               name="name"
               placeholder="Ej: Sally Jill"
               required
+              onChange = {this.props.changePreview}
             />
             <label
               htmlFor="position"
