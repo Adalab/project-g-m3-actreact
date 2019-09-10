@@ -9,15 +9,18 @@ import defaultImage from "./components/DefaultImage";
 class App extends React.Component {
   constructor(props){
     super(props);
+
       this.state = {
-        palette: 1,
-        name: '',
-        position: '',
-        email: '',
-        telf: '',
-        linkedin: '',
-        github: '',
-        image: defaultImage
+        userData : {
+          palette: 1,
+          name: '',
+          position: '',
+          email: '',
+          telf: '',
+          linkedin: '',
+          github: '',
+          image: defaultImage
+        }
       };
     
       this.changePreview = this.changePreview.bind(this)
@@ -26,21 +29,32 @@ class App extends React.Component {
 
   handleOptionChange(event) {
     const value = parseInt(event.currentTarget.value);
-    this.setState({
-      palette: value
-    });
+    this.setState(prevState => {
+      return {
+        userData: {
+          ...prevState.userData,
+          palette: value
+        }
+      };
+     });
   }
 
   changePreview(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState( {
-      [id] : value
-    });
+    this.setState(prevState => {
+      return {
+        userData: {
+          ...prevState.userData,
+          [id] : value
+        }
+      };
+     });
   }
+  
   render() {
     return <Cards 
-    userData = {this.state} 
+    userData = {this.state.userData} 
     changePreview = {this.changePreview}
     handleOptionChange = {this.handleOptionChange}
     />;
