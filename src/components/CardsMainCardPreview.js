@@ -1,6 +1,5 @@
 import React from "react";
-import defaultImage from "./DefaultImage";
-// import PropTypes from 'prop-types';
+
 
 class CardsMainCardPreview extends React.Component {
   constructor(props) {
@@ -63,7 +62,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href={`mailto:${this.props.userData.email}`}
+                      href={`mailto:${this.props.userData.email || '#mail'} `}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -77,7 +76,7 @@ class CardsMainCardPreview extends React.Component {
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={`tel:${this.props.userData.telf}`}
+                      href={`tel:${this.props.userData.telf || '#phone'}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -124,17 +123,6 @@ class CardsMainCardPreview extends React.Component {
       </section>
     );
   }
-}
-
-CardsMainCardPreview.defaultProps={
-  palette:'1',
-  name:'Nombre Apellido',
-  position: 'Front-end developer',
-  email: '#mail',
-  telf: '#phone',
-  linkedin:'#linkedin',
-  github:'#github',
-  image:defaultImage
 }
 
 

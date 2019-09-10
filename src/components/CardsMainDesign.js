@@ -20,7 +20,7 @@ class CardsMainDesign extends React.Component {
                     value="1"
                     name="colors"
                     checked={this.props.userData.palette === 1}
-                    onClick ={this.props.handleOptionChange}
+                    onChange ={this.props.handleOptionChange}
                     
                   />
                   <ul className="colors__list">
@@ -54,7 +54,7 @@ class CardsMainDesign extends React.Component {
                     value="2"
                     name="colors"
                     checked={this.props.userData.palette === 2}
-                    onClick= {this.props.handleOptionChange}
+                    onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -87,7 +87,7 @@ class CardsMainDesign extends React.Component {
                     value= "3"
                     name="colors"
                     checked={this.props.userData.palette === 3}
-                    onClick= {this.props.handleOptionChange}
+                    onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
