@@ -2,14 +2,15 @@ import React from "react";
 import "./App.scss";
 // import Landing from './components/Landing';
 import Cards from "./components/Cards";
-import defaultImage from "./components/DefaultImage"
+import defaultImage from "./components/DefaultImage";
+
 
 
 class App extends React.Component {
   constructor(props){
     super(props);
       this.state = {
-        palette: '1',
+        palette: 1,
         name: '',
         position: '',
         email: '',
@@ -24,8 +25,7 @@ class App extends React.Component {
   }
 
   handleOptionChange(event) {
-    const value = event.currentTarget.value;
-    console.log(value);
+    const value = parseInt(event.currentTarget.value);
     this.setState({
       palette: value
     });
@@ -40,8 +40,7 @@ class App extends React.Component {
   }
   render() {
     return <Cards 
-    state = {this.state} 
-    // selected={this.state.palette}
+    userData = {this.state} 
     changePreview = {this.changePreview}
     handleOptionChange = {this.handleOptionChange}
     />;
