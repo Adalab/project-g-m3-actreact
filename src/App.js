@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
       this.state = {
-        selected: '1',
+        palette: '1',
         name: '',
         position: '',
         email: '',
@@ -27,7 +27,7 @@ class App extends React.Component {
     const value = event.currentTarget.value;
     console.log(value);
     this.setState({
-      selected: value
+      palette: value
     });
   }
 
@@ -41,7 +41,7 @@ class App extends React.Component {
   render() {
     return <Cards 
     state = {this.state} 
-    selected={this.state.selected}
+    // selected={this.state.palette}
     changePreview = {this.changePreview}
     handleOptionChange = {this.handleOptionChange}
     />;

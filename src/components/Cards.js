@@ -12,7 +12,6 @@ class Cards extends React.Component {
           />
           <CardsMain 
           state = {this.props.state} 
-          selected={this.props.state.selectedOption}
           changePreview = {this.props.changePreview}
           handleOptionChange = {this.props.handleOptionChange}/>
         </div>
