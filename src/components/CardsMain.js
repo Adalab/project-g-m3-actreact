@@ -15,10 +15,13 @@ class CardsMain extends React.Component {
           className="form__all-sections form__section-fill"
           onSubmit="writeUrl()"
         >
-          <CardsMainCardPreview state={this.props.state} />
+          <CardsMainCardPreview 
+          state={this.props.state} />
 
           <div className="form__wrapper">
-            <CardsMainDesign />
+            <CardsMainDesign
+              state = {this.props.state}  
+              handleOptionChange = {this.props.handleOptionChange}/>
 
             <CardsMainFill
               changePreview={this.props.changePreview} />

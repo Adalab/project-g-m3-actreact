@@ -19,6 +19,9 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="1"
                     name="colors"
+                    checked={this.props.state.palette === "1"}
+                    onChange ={this.props.handleOptionChange}
+                    
                   />
                   <ul className="colors__list">
                     <li
@@ -50,6 +53,8 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="2"
                     name="colors"
+                    checked={this.props.state.palette === "2"}
+                    onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -81,6 +86,8 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="3"
                     name="colors"
+                    checked={this.props.state.palette === "3"}
+                    onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -111,5 +118,7 @@ class CardsMainDesign extends React.Component {
     );
   }
 }
+
+
 
 export default CardsMainDesign;

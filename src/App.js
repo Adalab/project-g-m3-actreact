@@ -9,6 +9,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
       this.state = {
+        palette: '1',
         name: '',
         position: '',
         email: '',
@@ -19,6 +20,15 @@ class App extends React.Component {
       };
     
       this.changePreview = this.changePreview.bind(this)
+      this.handleOptionChange = this.handleOptionChange.bind(this)
+  }
+
+  handleOptionChange(event) {
+    const value = event.currentTarget.value;
+    console.log(value);
+    this.setState({
+      palette: value
+    });
   }
 
   changePreview(event) {
@@ -26,14 +36,15 @@ class App extends React.Component {
     const id = event.currentTarget.id;
     this.setState( {
       [id] : value
-    }
-    )
-    ;
+    });
   }
   render() {
     return <Cards 
     state = {this.state} 
-    changePreview = {this.changePreview}/>;
+    // selected={this.state.palette}
+    changePreview = {this.changePreview}
+    handleOptionChange = {this.handleOptionChange}
+    />;
   }
 }
 
