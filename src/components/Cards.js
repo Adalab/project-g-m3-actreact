@@ -8,8 +8,12 @@ class Cards extends React.Component {
     return (
       <React.Fragment>
         <div className="cards__main-wrapper">
-          <CardsHeader />
-          <CardsMain />
+          <CardsHeader           
+          />
+          <CardsMain 
+          userData = {this.props.userData} 
+          changePreview = {this.props.changePreview}
+          handleOptionChange = {this.props.handleOptionChange}/>
         </div>
         <Footer />
       </React.Fragment>

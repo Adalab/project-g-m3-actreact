@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 class CardsMainDesign extends React.Component {
   render() {
@@ -19,6 +20,9 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="1"
                     name="colors"
+                    checked={this.props.userData.palette === 1}
+                    onChange ={this.props.handleOptionChange}
+                    
                   />
                   <ul className="colors__list">
                     <li
@@ -50,6 +54,8 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="2"
                     name="colors"
+                    checked={this.props.userData.palette === 2}
+                    onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -79,8 +85,10 @@ class CardsMainDesign extends React.Component {
                     className="input3"
                     id="colorsop3"
                     type="radio"
-                    value="3"
+                    value= "3"
                     name="colors"
+                    checked={this.props.userData.palette === 3}
+                    onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -110,6 +118,13 @@ class CardsMainDesign extends React.Component {
       </fieldset>
     );
   }
+}
+
+CardsMainDesign.propTypes = {
+  userData: PropTypes.shape({
+    palette: PropTypes.number.isRequired
+  }),
+  handleOptionChange: PropTypes.func
 }
 
 export default CardsMainDesign;

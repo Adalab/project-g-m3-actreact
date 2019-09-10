@@ -4,7 +4,10 @@ import CardsMainDesign from "./CardsMainDesign";
 import CardsMainFill from "./CardsMainFill";
 import CardsMainShare from "./CardsMainShare";
 
+
 class CardsMain extends React.Component {
+
+
   render() {
     return (
       <main className="cards__main">
@@ -12,12 +15,16 @@ class CardsMain extends React.Component {
           className="form__all-sections form__section-fill"
           onSubmit="writeUrl()"
         >
-          <CardsMainCardPreview />
+          <CardsMainCardPreview 
+          userData={this.props.userData} />
 
           <div className="form__wrapper">
-            <CardsMainDesign />
+            <CardsMainDesign
+              userData = {this.props.userData}  
+              handleOptionChange = {this.props.handleOptionChange}/>
 
-            <CardsMainFill />
+            <CardsMainFill
+              changePreview={this.props.changePreview} />
 
             <CardsMainShare />
           </div>
