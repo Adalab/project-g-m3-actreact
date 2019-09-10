@@ -39,7 +39,7 @@ class CardsMainCardPreview extends React.Component {
             >
               reset
             </button>
-            <div className={`cards__img-wrapper cards__img-wrapper-op${this.props.userData.palette || 1}`}>
+            <div className={`cards__img-wrapper cards__img-wrapper-op${this.props.userData.palette}`}>
               <div className="img__text-box">
                 <h2 className="img__title img-text__title">{`${this.props.userData.name || 'Nombre Apellido'}`}</h2>
 
