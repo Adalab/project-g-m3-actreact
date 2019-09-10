@@ -11,7 +11,7 @@ class Cards extends React.Component {
           <CardsHeader           
           />
           <CardsMain 
-          state = {this.props.state} 
+          userData = {this.props.userData} 
           changePreview = {this.props.changePreview}
           handleOptionChange = {this.props.handleOptionChange}/>
         </div>

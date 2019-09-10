@@ -1,5 +1,6 @@
 import React from "react";
 import defaultImage from "./DefaultImage";
+// import PropTypes from 'prop-types';
 
 class CardsMainCardPreview extends React.Component {
   constructor(props) {
@@ -38,31 +39,31 @@ class CardsMainCardPreview extends React.Component {
             >
               reset
             </button>
-            <div className={`cards__img-wrapper cards__img-wrapper-op${this.props.state.palette}`}>
+            <div className={`cards__img-wrapper cards__img-wrapper-op${this.props.userData.palette || 1}`}>
               <div className="img__text-box">
-                <h2 className="img__title img-text__title">{this.props.state.name}</h2>
+                <h2 className="img__title img-text__title">{`${this.props.userData.name || 'Nombre Apellido'}`}</h2>
 
                 <p className="img__text img-text__subtitle">
-                  {this.props.state.position}
+                  {`${this.props.userData.position || 'Front-End Developer'}`}
                 </p>
               </div>
               <div
                 className="profile__image js__profile-container-image cards__img"
-                style={{ backgroundImage: `url("${this.props.state.image}")` }}
+                style={{ backgroundImage: `url("${this.props.userData.image}")` }}
               >
                 <img
                   className="image js__profile-image"
-                  src={this.props.state.image}
+                  src={this.props.userData.image}
                   alt="Imagen por defecto"
                 />
               </div>
               <div className="img__icons-box">
                 <ul className="icons__list img-text__title">
-                  <li className={`icon1 ${this.props.state.email ? '' : 'hidden'}`}>
+                  <li className={`icon1 ${this.props.userData.email ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href={`mailto:${this.props.state.email}`}
+                      href={`mailto:${this.props.userData.email}`}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -72,11 +73,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon2 ${this.props.state.telf ? '' : 'hidden'}`}>
+                  <li className={`icon2 ${this.props.userData.telf ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={`tel:${this.props.state.telf}`}
+                      href={`tel:${this.props.userData.telf}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -85,11 +86,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon3 ${this.props.state.linkedin ? '' : 'hidden'}`}>
+                  <li className={`icon3 ${this.props.userData.linkedin ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
-                      href={this.writeLinkedinUrl(this.props.state.linkedin)}
+                      href={this.writeLinkedinUrl(this.props.userData.linkedin)}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -100,11 +101,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon4 ${this.props.state.github ? '' : 'hidden'}`}>
+                  <li className={`icon4 ${this.props.userData.github ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
-                      href={this.writeGithubUrl(this.props.state.github)}
+                      href={this.writeGithubUrl(this.props.userData.github)}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -126,15 +127,15 @@ class CardsMainCardPreview extends React.Component {
 }
 
 CardsMainCardPreview.defaultProps={
+  palette:'1',
   name:'Nombre Apellido',
-  job: 'Front-end developer',
-  mail: '#mail',
-  phone: '#phone',
+  position: 'Front-end developer',
+  email: '#mail',
+  telf: '#phone',
   linkedin:'#linkedin',
   github:'#github',
   image:defaultImage
 }
-
 
 
 export default CardsMainCardPreview;

@@ -16,11 +16,11 @@ class CardsMain extends React.Component {
           onSubmit="writeUrl()"
         >
           <CardsMainCardPreview 
-          state={this.props.state} />
+          userData={this.props.userData} />
 
           <div className="form__wrapper">
             <CardsMainDesign
-              state = {this.props.state}  
+              userData = {this.props.userData}  
               handleOptionChange = {this.props.handleOptionChange}/>
 
             <CardsMainFill

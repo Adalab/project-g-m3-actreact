@@ -19,7 +19,7 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="1"
                     name="colors"
-                    checked={this.props.state.palette === "1"}
+                    checked={this.props.userData.palette === 1}
                     onChange ={this.props.handleOptionChange}
                     
                   />
@@ -53,7 +53,7 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="2"
                     name="colors"
-                    checked={this.props.state.palette === "2"}
+                    checked={this.props.userData.palette === 2}
                     onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
@@ -84,9 +84,9 @@ class CardsMainDesign extends React.Component {
                     className="input3"
                     id="colorsop3"
                     type="radio"
-                    value="3"
+                    value= "3"
                     name="colors"
-                    checked={this.props.state.palette === "3"}
+                    checked={this.props.userData.palette === 3}
                     onChange= {this.props.handleOptionChange}
                   />
                   <ul className="colors__list">
