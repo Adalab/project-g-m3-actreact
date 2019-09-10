@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 class CardsMainDesign extends React.Component {
   render() {
@@ -119,6 +120,11 @@ class CardsMainDesign extends React.Component {
   }
 }
 
-
+CardsMainDesign.propTypes = {
+  userData: PropTypes.shape({
+    palette: PropTypes.number.isRequired
+  }),
+  handleOptionChange: PropTypes.func
+}
 
 export default CardsMainDesign;

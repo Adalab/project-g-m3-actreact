@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 class CardsMainFill extends React.Component {
   render() {
@@ -119,6 +120,10 @@ class CardsMainFill extends React.Component {
       </fieldset>
     );
   }
+}
+
+CardsMainFill.propTypes = {
+  changePreview: PropTypes.func
 }
 
 export default CardsMainFill;

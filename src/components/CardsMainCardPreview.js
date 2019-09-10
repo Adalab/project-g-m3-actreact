@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from 'prop-types';
 
 class CardsMainCardPreview extends React.Component {
   constructor(props) {
@@ -125,5 +125,17 @@ class CardsMainCardPreview extends React.Component {
   }
 }
 
+CardsMainCardPreview.propTypes = {
+  userData: PropTypes.shape({
+    palette: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    telf: PropTypes.string,
+    linkedin: PropTypes.string.isRequired,
+    github: PropTypes.string.isRequired
+  })
+}
 
 export default CardsMainCardPreview;
