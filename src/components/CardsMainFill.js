@@ -6,7 +6,7 @@ class CardsMainFill extends React.Component {
     return (
       <fieldset className="form__fieldset fieldset">
         <div className="container containerMother-js open">
-          <div className="form__fieldset-head-container containerClick-js">
+          <div className="form__fieldset-head-container containerClick-js" id="fill" onClick={this.props.handleCollapsable}>
             <h2 className="form__fieldset-main_title">Rellena</h2>
           </div>
           <div className="form__fieldset-main_content rollContainer-js">

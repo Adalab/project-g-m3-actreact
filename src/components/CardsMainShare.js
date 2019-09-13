@@ -5,7 +5,7 @@ class CardsMainShare extends React.Component {
     return (
       <fieldset className="share__fieldset fieldset">
         <div className="container containerMother-js open">
-          <div className="content__share-container containerClick-js">
+          <div className="content__share-container containerClick-js" id="share" onClick={this.props.handleCollapsable}>
             <h2 className="share__title">Comparte</h2>
           </div>
           <div className="rollContainer-js">

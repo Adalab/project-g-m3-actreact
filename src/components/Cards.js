@@ -13,7 +13,9 @@ class Cards extends React.Component {
           <CardsMain 
           userData = {this.props.userData} 
           changePreview = {this.props.changePreview}
-          handleOptionChange = {this.props.handleOptionChange}/>
+          handleOptionChange = {this.props.handleOptionChange}
+          handleCollapsable = {this.props.handleCollapsable}
+          />
         </div>
         <Footer />
       </React.Fragment>

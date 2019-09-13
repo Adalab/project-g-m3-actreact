@@ -21,12 +21,18 @@ class CardsMain extends React.Component {
           <div className="form__wrapper">
             <CardsMainDesign
               userData = {this.props.userData}  
-              handleOptionChange = {this.props.handleOptionChange}/>
+              handleOptionChange = {this.props.handleOptionChange}
+              handleCollapsable = {this.props.handleCollapsable}
+            />
 
             <CardsMainFill
-              changePreview={this.props.changePreview} />
+              changePreview={this.props.changePreview} 
+              handleCollapsable = {this.props.handleCollapsable}
+            />
 
-            <CardsMainShare />
+            <CardsMainShare 
+              handleCollapsable = {this.props.handleCollapsable}
+            />
           </div>
         </form>
       </main>

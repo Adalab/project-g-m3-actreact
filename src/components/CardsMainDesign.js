@@ -6,7 +6,7 @@ class CardsMainDesign extends React.Component {
     return (
       <fieldset className="design">
         <div className="container containerMother-js open">
-          <div className="design-title__container containerClick-js">
+          <div className="design-title__container containerClick-js" id="design" onClick={this.props.handleCollapsable}>
             <h2 className="desing__title">Diseña</h2>
           </div>
           <div className="colors__container rollContainer-js">
