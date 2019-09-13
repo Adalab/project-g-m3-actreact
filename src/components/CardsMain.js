@@ -3,6 +3,7 @@ import CardsMainCardPreview from "./CardsMainCardPreview";
 import CardsMainDesign from "./CardsMainDesign";
 import CardsMainFill from "./CardsMainFill";
 import CardsMainShare from "./CardsMainShare";
+import PropTypes from "prop-types";
 
 
 class CardsMain extends React.Component {
@@ -33,5 +34,11 @@ class CardsMain extends React.Component {
     );
   }
 }
+
+CardsMain.propTypes = {
+  userData: PropTypes.object.isRequired,
+  changePreview: PropTypes.func.isRequired,
+  handleOptionChange: PropTypes.func.isRequired
+};
 
 export default CardsMain;
