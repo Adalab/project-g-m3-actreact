@@ -25,6 +25,7 @@ class CardsMain extends React.Component {
               handleOptionChange = {this.props.handleOptionChange}/>
 
             <CardsMainFill
+              userData = {this.props.userData}
               changePreview={this.props.changePreview} />
 
             <CardsMainShare />

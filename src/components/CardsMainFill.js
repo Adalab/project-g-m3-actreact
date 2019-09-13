@@ -1,8 +1,13 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 class CardsMainFill extends React.Component {
   render() {
+    const {
+      userData,
+      changePreview
+    } = this.props;
+
     return (
       <fieldset className="form__fieldset fieldset">
         <div className="container containerMother-js open">
@@ -23,7 +28,8 @@ class CardsMainFill extends React.Component {
               name="name"
               placeholder="Ej: Sally Jill"
               required
-              onChange = {this.props.changePreview}
+              onChange = {changePreview}
+              value={userData.name}
             />
             <label
               htmlFor="position"
@@ -38,7 +44,8 @@ class CardsMainFill extends React.Component {
               name="position"
               placeholder="Ej: Front-end unicorn"
               required
-              onChange = {this.props.changePreview}
+              onChange = {changePreview}
+              value={userData.position}
             />
             <div className="form__fieldset-add_img_wrapper">
               <p className="form__fieldset-add_img-text">Imagen de perfil</p>
@@ -71,7 +78,8 @@ class CardsMainFill extends React.Component {
               name="email"
               placeholder="Ej: sally-hill@gmail.com"
               required
-              onChange = {this.props.changePreview}
+              onChange = {changePreview}
+              value={userData.email}
             />
             <label htmlFor="telf" className="form__fieldset-content">
               Teléfono
@@ -82,7 +90,8 @@ class CardsMainFill extends React.Component {
               id="telf"
               name="telf"
               placeholder="Ej: 555-55-55-55"
-              onChange = {this.props.changePreview}
+              onChange = {changePreview}
+              value={userData.telf}
             />
             <label
               htmlFor="linkedin"
@@ -97,7 +106,8 @@ class CardsMainFill extends React.Component {
               name="linkedin"
               placeholder="Ej: sally.hill"
               required
-              onChange = {this.props.changePreview}
+              onChange = {changePreview}
+              value={userData.linkedin}
             />
             <label
               htmlFor="github"
@@ -112,7 +122,8 @@ class CardsMainFill extends React.Component {
               name="github"
               placeholder="Ej: @sally-hill"
               required
-              onChange = {this.props.changePreview}
+              onChange = {changePreview}
+              value={userData.github}
             />
           </div>
           <div className="line-bottom"></div>
@@ -123,6 +134,16 @@ class CardsMainFill extends React.Component {
 }
 
 CardsMainFill.propTypes = {
+  userData: PropTypes.shape({
+    palette: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    telf: PropTypes.string,
+    linkedin: PropTypes.string.isRequired,
+    github: PropTypes.string.isRequired
+  }),
   changePreview: PropTypes.func
 }
 
