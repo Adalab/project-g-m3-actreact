@@ -30,6 +30,7 @@ class App extends React.Component {
       this.handleCollapsable = this.handleCollapsable.bind(this)
   }
 
+<<<<<<< HEAD
   handleCollapsable(event){
     const newCollapsablesId = event.currentTarget.getAttribute('data-id');
     this.setState(prevState => {
@@ -45,9 +46,22 @@ class App extends React.Component {
     })
   }
   
+=======
+  componentDidMount(){
+    this.getLocalStorage();
+  }
+
+>>>>>>> dev
   handleOptionChange(event) {
     const value = parseInt(event.currentTarget.value);
     this.setState(prevState => {
+      const newPalette = {
+        ...prevState.userData,
+        palette: value
+      }; 
+
+      localStorage.setItem('lsUserData', JSON.stringify(newPalette));
+
       return {
         userData: {
           ...prevState.userData,
@@ -60,14 +74,28 @@ class App extends React.Component {
   changePreview(event) {
     const value = event.currentTarget.value;
     const id = event.currentTarget.id;
+
     this.setState(prevState => {
-      return {
-        userData: {
-          ...prevState.userData,
-          [id] : value
-        }
+      const newUserData = {
+        ...prevState.userData, 
+        [id] : value
       };
+        localStorage.setItem('lsUserData', JSON.stringify(newUserData));
+      return {
+        userData: newUserData
+      };
+     
+
      });
+  }
+
+  getLocalStorage() {
+    const ls = JSON.parse(localStorage.getItem('lsUserData'));
+    if ( ls !== null){
+      this.setState({
+        userData:ls
+      });
+    }
   }
   
   render() {

@@ -3,6 +3,7 @@ import CardsMainCardPreview from "./CardsMainCardPreview";
 import CardsMainDesign from "./CardsMainDesign";
 import CardsMainFill from "./CardsMainFill";
 import CardsMainShare from "./CardsMainShare";
+import PropTypes from "prop-types";
 
 
 class CardsMain extends React.Component {
@@ -33,14 +34,24 @@ class CardsMain extends React.Component {
             />
 
             <CardsMainShare 
+              changePreview={this.props.changePreview} 
               handleCollapsable = {this.props.handleCollapsable}
               collapsablesId = {this.props.collapsablesId}
+              userData = {this.props.userData}
             />
+
+            
           </div>
         </form>
       </main>
     );
   }
 }
+
+CardsMain.propTypes = {
+  userData: PropTypes.object.isRequired,
+  changePreview: PropTypes.func.isRequired,
+  handleOptionChange: PropTypes.func.isRequired
+};
 
 export default CardsMain;

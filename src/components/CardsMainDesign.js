@@ -1,9 +1,14 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 class CardsMainDesign extends React.Component {
   render() {
     const {collapsablesId,handleCollapsable} = this.props;
+    const {
+      userData,
+      handleOptionChange,
+    } = this.props
+
     return (
       <fieldset className="design">
         <div id="design" className={`container containerMother-js ${collapsablesId === 'design' ? 'open' : '' }`}>
@@ -21,8 +26,8 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="1"
                     name="colors"
-                    checked={this.props.userData.palette === 1}
-                    onChange ={this.props.handleOptionChange}
+                    checked={userData.palette === 1}
+                    onChange ={handleOptionChange}
                     
                   />
                   <ul className="colors__list">
@@ -55,8 +60,8 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="2"
                     name="colors"
-                    checked={this.props.userData.palette === 2}
-                    onChange= {this.props.handleOptionChange}
+                    checked={userData.palette === 2}
+                    onChange= {handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -88,8 +93,8 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value= "3"
                     name="colors"
-                    checked={this.props.userData.palette === 3}
-                    onChange= {this.props.handleOptionChange}
+                    checked={userData.palette === 3}
+                    onChange= {handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li

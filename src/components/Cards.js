@@ -2,6 +2,7 @@ import React from "react";
 import CardsHeader from "./CardsHeader";
 import CardsMain from "./CardsMain";
 import Footer from "./Footer";
+import PropTypes from "prop-types";
 
 class Cards extends React.Component {
   render() {
@@ -23,5 +24,11 @@ class Cards extends React.Component {
     );
   }
 }
+
+Cards.propTypes = {
+  userData: PropTypes.object.isRequired,
+  changePreview: PropTypes.func.isRequired,
+  handleOptionChange: PropTypes.func.isRequired
+};
 
 export default Cards;
