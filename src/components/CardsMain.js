@@ -10,38 +10,46 @@ class CardsMain extends React.Component {
 
 
   render() {
+    const {
+      userData,
+      handleOptionChange,
+      handleCollapsable,
+      collapsablesId,
+      changePreview,
+
+    } = this.props;
+
     return (
       <main className="cards__main">
         <form
           className="form__all-sections form__section-fill"
           onSubmit="writeUrl()"
         >
-          <CardsMainCardPreview 
-          userData={this.props.userData} />
+          <CardsMainCardPreview
+            userData={userData} />
 
           <div className="form__wrapper">
             <CardsMainDesign
-              userData = {this.props.userData}  
-              handleOptionChange = {this.props.handleOptionChange}
-              handleCollapsable = {this.props.handleCollapsable}
-              collapsablesId = {this.props.collapsablesId}
+              handleOptionChange={handleOptionChange}
+              handleCollapsable={handleCollapsable}
+              collapsablesId={collapsablesId}
+              palette={userData.palette}
             />
 
             <CardsMainFill
-              changePreview={this.props.changePreview} 
-              handleCollapsable = {this.props.handleCollapsable}
-              collapsablesId = {this.props.collapsablesId}
-              userData = {this.props.userData}
+              changePreview={changePreview}
+              handleCollapsable={handleCollapsable}
+              collapsablesId={collapsablesId}
+              userData={userData}
             />
 
-            <CardsMainShare 
-              changePreview={this.props.changePreview} 
-              handleCollapsable = {this.props.handleCollapsable}
-              collapsablesId = {this.props.collapsablesId}
-              userData = {this.props.userData}
+            <CardsMainShare
+              handleCollapsable={handleCollapsable}
+              collapsablesId={collapsablesId}
+              userData={userData}
             />
 
-            
+
           </div>
         </form>
       </main>
@@ -52,7 +60,9 @@ class CardsMain extends React.Component {
 CardsMain.propTypes = {
   userData: PropTypes.object.isRequired,
   changePreview: PropTypes.func.isRequired,
-  handleOptionChange: PropTypes.func.isRequired
+  handleOptionChange: PropTypes.func.isRequired,
+  handleCollapsable: PropTypes.func.isRequired,
+  collapsablesId: PropTypes.string.isRequired
 };
 
 export default CardsMain;

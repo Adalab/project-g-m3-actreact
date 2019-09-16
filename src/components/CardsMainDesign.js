@@ -6,7 +6,7 @@ class CardsMainDesign extends React.Component {
     const {
       collapsablesId,
       handleCollapsable,
-      userData,
+      palette,
       handleOptionChange,
     } = this.props
 
@@ -27,7 +27,7 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="1"
                     name="colors"
-                    checked={userData.palette === 1}
+                    checked={palette === 1}
                     onChange ={handleOptionChange}
                     
                   />
@@ -61,7 +61,7 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value="2"
                     name="colors"
-                    checked={userData.palette === 2}
+                    checked={palette === 2}
                     onChange= {handleOptionChange}
                   />
                   <ul className="colors__list">
@@ -94,7 +94,7 @@ class CardsMainDesign extends React.Component {
                     type="radio"
                     value= "3"
                     name="colors"
-                    checked={userData.palette === 3}
+                    checked={palette === 3}
                     onChange= {handleOptionChange}
                   />
                   <ul className="colors__list">
@@ -128,10 +128,10 @@ class CardsMainDesign extends React.Component {
 }
 
 CardsMainDesign.propTypes = {
-  userData: PropTypes.shape({
-    palette: PropTypes.number.isRequired
-  }),
-  handleOptionChange: PropTypes.func
+  palette: PropTypes.number.isRequired,
+  handleOptionChange: PropTypes.func,
+  handleCollapsable: PropTypes.func.isRequired,
+  collapsablesId: PropTypes.string.isRequired
 }
 
 export default CardsMainDesign;

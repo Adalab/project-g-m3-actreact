@@ -1,15 +1,16 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 class CardsMainShare extends React.Component {
   render() {
     const {
       collapsablesId,
-      handleCollapsable
+      handleCollapsable,
     } = this.props;
-    
+
     return (
       <fieldset className="share__fieldset fieldset">
-        <div id="share" className={`container containerMother-js ${collapsablesId === 'share' ? 'open' : '' }`}>
+        <div id="share" className={`container containerMother-js ${collapsablesId === 'share' ? 'open' : ''}`}>
           <div className="content__share-container containerClick-js" data-id="share" onClick={handleCollapsable}>
             <h2 className="share__title">Comparte</h2>
           </div>
@@ -37,5 +38,11 @@ class CardsMainShare extends React.Component {
     );
   }
 }
+
+CardsMainShare.propTypes = {
+  userData: PropTypes.object.isRequired,
+  handleCollapsable: PropTypes.func.isRequired,
+  collapsablesId: PropTypes.string.isRequired
+};
 
 export default CardsMainShare;

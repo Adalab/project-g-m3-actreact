@@ -7,45 +7,45 @@ import defaultImage from "./components/DefaultImage";
 
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
-      this.state = {
-        collapsablesId : 'design',
+    this.state = {
+      collapsablesId: 'design',
 
-        userData : {
-          palette: 1,
-          name: '',
-          position: '',
-          email: '',
-          telf: '',
-          linkedin: '',
-          github: '',
-          image: defaultImage
-        }
-      };
-    
-      this.changePreview = this.changePreview.bind(this)
-      this.handleOptionChange = this.handleOptionChange.bind(this)
-      this.handleCollapsable = this.handleCollapsable.bind(this)
+      userData: {
+        palette: 1,
+        name: '',
+        position: '',
+        email: '',
+        telf: '',
+        linkedin: '',
+        github: '',
+        image: defaultImage
+      }
+    };
+
+    this.changePreview = this.changePreview.bind(this)
+    this.handleOptionChange = this.handleOptionChange.bind(this)
+    this.handleCollapsable = this.handleCollapsable.bind(this)
   }
 
-  handleCollapsable(event){
+  handleCollapsable(event) {
     const newCollapsablesId = event.currentTarget.getAttribute('data-id');
     this.setState(prevState => {
-      if(newCollapsablesId === prevState.collapsablesId){
+      if (newCollapsablesId === prevState.collapsablesId) {
         return {
-          collapsablesId:null
+          collapsablesId: null
         }
-      }else{
+      } else {
         return {
-          collapsablesId:newCollapsablesId
+          collapsablesId: newCollapsablesId
         }
       }
     })
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     this.getLocalStorage();
   }
 
@@ -55,7 +55,7 @@ class App extends React.Component {
       const newPalette = {
         ...prevState.userData,
         palette: value
-      }; 
+      };
 
       localStorage.setItem('lsUserData', JSON.stringify(newPalette));
 
@@ -65,7 +65,7 @@ class App extends React.Component {
           palette: value
         }
       };
-     });
+    });
   }
 
   changePreview(event) {
@@ -74,34 +74,34 @@ class App extends React.Component {
 
     this.setState(prevState => {
       const newUserData = {
-        ...prevState.userData, 
-        [id] : value
+        ...prevState.userData,
+        [id]: value
       };
-        localStorage.setItem('lsUserData', JSON.stringify(newUserData));
+      localStorage.setItem('lsUserData', JSON.stringify(newUserData));
       return {
         userData: newUserData
       };
-     
 
-     });
+
+    });
   }
 
   getLocalStorage() {
     const ls = JSON.parse(localStorage.getItem('lsUserData'));
-    if ( ls !== null){
+    if (ls !== null) {
       this.setState({
-        userData:ls
+        userData: ls
       });
     }
   }
-  
+
   render() {
-    return <Cards 
-    userData = {this.state.userData} 
-    changePreview = {this.changePreview}
-    handleOptionChange = {this.handleOptionChange}
-    handleCollapsable = {this.handleCollapsable}
-    collapsablesId = {this.state.collapsablesId}
+    return <Cards
+      userData={this.state.userData}
+      changePreview={this.changePreview}
+      handleOptionChange={this.handleOptionChange}
+      handleCollapsable={this.handleCollapsable}
+      collapsablesId={this.state.collapsablesId}
     />;
   }
 }

@@ -155,7 +155,9 @@ CardsMainFill.propTypes = {
     linkedin: PropTypes.string.isRequired,
     github: PropTypes.string.isRequired
   }),
-  changePreview: PropTypes.func
+  changePreview: PropTypes.func,
+  handleCollapsable: PropTypes.func.isRequired,
+  collapsablesId: PropTypes.string.isRequired
 }
 
 export default CardsMainFill;
