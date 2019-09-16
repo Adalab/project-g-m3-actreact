@@ -119,11 +119,11 @@
 .reset{
   position: relative;
   color: $color-card-img-section-p;
-  @media all and (min-width:768px)
-  {position: absolute;
-    top: -50px;
-    left: 0;
-  };
+  // @media all and (min-width:768px)
+  // {position: absolute;
+  //   top: -50px;
+  //   left: 0;
+  // };
 }
 .reset:before{
   content: "\f2ed";
