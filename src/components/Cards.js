@@ -8,18 +8,20 @@ class Cards extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="cards__main-wrapper">
-          <CardsHeader
-          />
-          <CardsMain
-            userData={this.props.userData}
-            changePreview={this.props.changePreview}
-            handleOptionChange={this.props.handleOptionChange}
-            handleCollapsable={this.props.handleCollapsable}
-            collapsablesId={this.props.collapsablesId}
-          />
+        <div className="cards-wrapper">
+          <div className="cards__main-wrapper">
+            <CardsHeader
+            />
+            <CardsMain
+              userData={this.props.userData}
+              changePreview={this.props.changePreview}
+              handleOptionChange={this.props.handleOptionChange}
+              handleCollapsable={this.props.handleCollapsable}
+              collapsablesId={this.props.collapsablesId}
+            />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     );
   }
