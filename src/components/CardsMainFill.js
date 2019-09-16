@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 class CardsMainFill extends React.Component {
   render() {
+    const {collapsablesId,handleCollapsable} = this.props;
     const {
       userData,
       changePreview
@@ -18,8 +19,8 @@ class CardsMainFill extends React.Component {
 
     return (
       <fieldset className="form__fieldset fieldset">
-        <div className="container containerMother-js open">
-          <div className="form__fieldset-head-container containerClick-js">
+        <div id="fill" className={`container containerMother-js ${collapsablesId === 'fill' ? 'open' : '' }`}>
+          <div className="form__fieldset-head-container containerClick-js" data-id="fill" onClick={handleCollapsable}>
             <h2 className="form__fieldset-main_title">Rellena</h2>
           </div>
           <div className="form__fieldset-main_content rollContainer-js">

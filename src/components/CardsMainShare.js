@@ -2,10 +2,11 @@ import React from "react";
 
 class CardsMainShare extends React.Component {
   render() {
+    const {collapsablesId,handleCollapsable} = this.props;
     return (
       <fieldset className="share__fieldset fieldset">
-        <div className="container containerMother-js open">
-          <div className="content__share-container containerClick-js">
+        <div id="share" className={`container containerMother-js ${collapsablesId === 'share' ? 'open' : '' }`}>
+          <div className="content__share-container containerClick-js" data-id="share" onClick={handleCollapsable}>
             <h2 className="share__title">Comparte</h2>
           </div>
           <div className="rollContainer-js">

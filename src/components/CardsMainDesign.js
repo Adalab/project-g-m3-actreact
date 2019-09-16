@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 class CardsMainDesign extends React.Component {
   render() {
+    const {collapsablesId,handleCollapsable} = this.props;
     const {
       userData,
       handleOptionChange,
@@ -10,8 +11,8 @@ class CardsMainDesign extends React.Component {
 
     return (
       <fieldset className="design">
-        <div className="container containerMother-js open">
-          <div className="design-title__container containerClick-js">
+        <div id="design" className={`container containerMother-js ${collapsablesId === 'design' ? 'open' : '' }`}>
+          <div className="design-title__container containerClick-js" data-id="design" onClick={handleCollapsable}>
             <h2 className="desing__title">Diseña</h2>
           </div>
           <div className="colors__container rollContainer-js">

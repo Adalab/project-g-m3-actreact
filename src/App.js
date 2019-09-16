@@ -11,6 +11,8 @@ class App extends React.Component {
     super(props);
 
       this.state = {
+        collapsablesId : 'design',
+
         userData : {
           palette: 1,
           name: '',
@@ -25,12 +27,31 @@ class App extends React.Component {
     
       this.changePreview = this.changePreview.bind(this)
       this.handleOptionChange = this.handleOptionChange.bind(this)
+      this.handleCollapsable = this.handleCollapsable.bind(this)
   }
 
+<<<<<<< HEAD
+  handleCollapsable(event){
+    const newCollapsablesId = event.currentTarget.getAttribute('data-id');
+    this.setState(prevState => {
+      if(newCollapsablesId === prevState.collapsablesId){
+        return {
+          collapsablesId:null
+        }
+      }else{
+        return {
+          collapsablesId:newCollapsablesId
+        }
+      }
+    })
+  }
+  
+=======
   componentDidMount(){
     this.getLocalStorage();
   }
 
+>>>>>>> dev
   handleOptionChange(event) {
     const value = parseInt(event.currentTarget.value);
     this.setState(prevState => {
@@ -82,6 +103,8 @@ class App extends React.Component {
     userData = {this.state.userData} 
     changePreview = {this.changePreview}
     handleOptionChange = {this.handleOptionChange}
+    handleCollapsable = {this.handleCollapsable}
+    collapsablesId = {this.state.collapsablesId}
     />;
   }
 }
