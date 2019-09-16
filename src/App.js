@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
-// import Landing from './components/Landing';
-import Cards from "./components/Cards";
+import Landing from './components/Landing';
+// import Cards from "./components/Cards";
 import defaultImage from "./components/DefaultImage";
 
 
@@ -96,13 +96,14 @@ class App extends React.Component {
   }
 
   render() {
-    return <Cards
-      userData={this.state.userData}
-      changePreview={this.changePreview}
-      handleOptionChange={this.handleOptionChange}
-      handleCollapsable={this.handleCollapsable}
-      collapsablesId={this.state.collapsablesId}
-    />;
+    return <Landing />
+    // <Cards
+    //   userData={this.state.userData}
+    //   changePreview={this.changePreview}
+    //   handleOptionChange={this.handleOptionChange}
+    //   handleCollapsable={this.handleCollapsable}
+    //   collapsablesId={this.state.collapsablesId}
+    // />;
   }
 }
 
