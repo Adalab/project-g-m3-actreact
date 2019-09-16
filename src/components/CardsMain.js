@@ -31,6 +31,7 @@ class CardsMain extends React.Component {
               changePreview={this.props.changePreview} 
               handleCollapsable = {this.props.handleCollapsable}
               collapsablesId = {this.props.collapsablesId}
+              userData = {this.props.userData}
             />
 
             <CardsMainShare 

@@ -30,7 +30,6 @@ class App extends React.Component {
       this.handleCollapsable = this.handleCollapsable.bind(this)
   }
 
-<<<<<<< HEAD
   handleCollapsable(event){
     const newCollapsablesId = event.currentTarget.getAttribute('data-id');
     this.setState(prevState => {
@@ -46,12 +45,10 @@ class App extends React.Component {
     })
   }
   
-=======
   componentDidMount(){
     this.getLocalStorage();
   }
 
->>>>>>> dev
   handleOptionChange(event) {
     const value = parseInt(event.currentTarget.value);
     this.setState(prevState => {

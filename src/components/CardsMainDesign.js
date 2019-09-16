@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 
 class CardsMainDesign extends React.Component {
   render() {
-    const {collapsablesId,handleCollapsable} = this.props;
     const {
+      collapsablesId,
+      handleCollapsable,
       userData,
       handleOptionChange,
     } = this.props

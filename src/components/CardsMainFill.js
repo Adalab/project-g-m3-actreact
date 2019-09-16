@@ -3,23 +3,25 @@ import PropTypes from "prop-types";
 
 class CardsMainFill extends React.Component {
   render() {
-    const {collapsablesId,handleCollapsable} = this.props;
     const {
+      collapsablesId,
+      handleCollapsable,
       userData,
       changePreview
     } = this.props;
-     const {
+
+    const {
       name,
       position,
       email,
       telf,
       linkedin,
       github
-     } = userData;
+    } = userData;
 
     return (
       <fieldset className="form__fieldset fieldset">
-        <div id="fill" className={`container containerMother-js ${collapsablesId === 'fill' ? 'open' : '' }`}>
+        <div id="fill" className={`container containerMother-js ${collapsablesId === 'fill' ? 'open' : ''}`}>
           <div className="form__fieldset-head-container containerClick-js" data-id="fill" onClick={handleCollapsable}>
             <h2 className="form__fieldset-main_title">Rellena</h2>
           </div>
@@ -37,7 +39,7 @@ class CardsMainFill extends React.Component {
               name="name"
               placeholder="Ej: Sally Jill"
               required
-              onChange = {changePreview}
+              onChange={changePreview}
               value={name}
             />
             <label
@@ -53,7 +55,7 @@ class CardsMainFill extends React.Component {
               name="position"
               placeholder="Ej: Front-end unicorn"
               required
-              onChange = {changePreview}
+              onChange={changePreview}
               value={position}
             />
             <div className="form__fieldset-add_img_wrapper">
@@ -87,7 +89,7 @@ class CardsMainFill extends React.Component {
               name="email"
               placeholder="Ej: sally-hill@gmail.com"
               required
-              onChange = {changePreview}
+              onChange={changePreview}
               value={email}
             />
             <label htmlFor="telf" className="form__fieldset-content">
@@ -99,7 +101,7 @@ class CardsMainFill extends React.Component {
               id="telf"
               name="telf"
               placeholder="Ej: 555-55-55-55"
-              onChange = {changePreview}
+              onChange={changePreview}
               value={telf}
             />
             <label
@@ -115,7 +117,7 @@ class CardsMainFill extends React.Component {
               name="linkedin"
               placeholder="Ej: sally.hill"
               required
-              onChange = {changePreview}
+              onChange={changePreview}
               value={linkedin}
             />
             <label
@@ -131,7 +133,7 @@ class CardsMainFill extends React.Component {
               name="github"
               placeholder="Ej: @sally-hill"
               required
-              onChange = {changePreview}
+              onChange={changePreview}
               value={github}
             />
           </div>
