@@ -7,6 +7,14 @@ class CardsMainFill extends React.Component {
       userData,
       changePreview
     } = this.props;
+     const {
+      name,
+      position,
+      email,
+      telf,
+      linkedin,
+      github
+     } = userData;
 
     return (
       <fieldset className="form__fieldset fieldset">
@@ -29,7 +37,7 @@ class CardsMainFill extends React.Component {
               placeholder="Ej: Sally Jill"
               required
               onChange = {changePreview}
-              value={userData.name}
+              value={name}
             />
             <label
               htmlFor="position"
@@ -45,7 +53,7 @@ class CardsMainFill extends React.Component {
               placeholder="Ej: Front-end unicorn"
               required
               onChange = {changePreview}
-              value={userData.position}
+              value={position}
             />
             <div className="form__fieldset-add_img_wrapper">
               <p className="form__fieldset-add_img-text">Imagen de perfil</p>
@@ -79,7 +87,7 @@ class CardsMainFill extends React.Component {
               placeholder="Ej: sally-hill@gmail.com"
               required
               onChange = {changePreview}
-              value={userData.email}
+              value={email}
             />
             <label htmlFor="telf" className="form__fieldset-content">
               Teléfono
@@ -91,7 +99,7 @@ class CardsMainFill extends React.Component {
               name="telf"
               placeholder="Ej: 555-55-55-55"
               onChange = {changePreview}
-              value={userData.telf}
+              value={telf}
             />
             <label
               htmlFor="linkedin"
@@ -107,7 +115,7 @@ class CardsMainFill extends React.Component {
               placeholder="Ej: sally.hill"
               required
               onChange = {changePreview}
-              value={userData.linkedin}
+              value={linkedin}
             />
             <label
               htmlFor="github"
@@ -123,7 +131,7 @@ class CardsMainFill extends React.Component {
               placeholder="Ej: @sally-hill"
               required
               onChange = {changePreview}
-              value={userData.github}
+              value={github}
             />
           </div>
           <div className="line-bottom"></div>
