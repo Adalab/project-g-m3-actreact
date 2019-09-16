@@ -15,6 +15,7 @@ class Cards extends React.Component {
           changePreview = {this.props.changePreview}
           handleOptionChange = {this.props.handleOptionChange}
           handleCollapsable = {this.props.handleCollapsable}
+          collapsablesId = {this.props.collapsablesId}
           />
         </div>
         <Footer />

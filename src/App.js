@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
 
       this.state = {
-        collapsablesId : '',
+        collapsablesId : 'design',
 
         userData : {
           palette: 1,
@@ -27,11 +27,22 @@ class App extends React.Component {
     
       this.changePreview = this.changePreview.bind(this)
       this.handleOptionChange = this.handleOptionChange.bind(this)
+      this.handleCollapsable = this.handleCollapsable.bind(this)
   }
 
-  handleCollapsable(){
-    if
-
+  handleCollapsable(event){
+    const newCollapsablesId = event.currentTarget.getAttribute('data-id');
+    this.setState(prevState => {
+      if(newCollapsablesId === prevState.collapsablesId){
+        return {
+          collapsablesId:null
+        }
+      }else{
+        return {
+          collapsablesId:newCollapsablesId
+        }
+      }
+    })
   }
   
   handleOptionChange(event) {
@@ -65,6 +76,7 @@ class App extends React.Component {
     changePreview = {this.changePreview}
     handleOptionChange = {this.handleOptionChange}
     handleCollapsable = {this.handleCollapsable}
+    collapsablesId = {this.state.collapsablesId}
     />;
   }
 }
