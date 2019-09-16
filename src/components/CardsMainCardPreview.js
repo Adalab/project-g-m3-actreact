@@ -28,6 +28,18 @@ class CardsMainCardPreview extends React.Component {
   }
 
   render() {
+    const { userData } = this.props;
+    const {
+      palette,
+      name,
+      position,
+      email,
+      telf,
+      linkedin,
+      github, 
+      image
+    } = userData;
+
     return (
       <section className="cards__img-section">
         <div className="container">
@@ -38,31 +50,31 @@ class CardsMainCardPreview extends React.Component {
             >
               reset
             </button>
-            <div className={`cards__img-wrapper cards__img-wrapper-op${this.props.userData.palette}`}>
+            <div className={`cards__img-wrapper cards__img-wrapper-op${palette}`}>
               <div className="img__text-box">
-                <h2 className="img__title img-text__title">{`${this.props.userData.name || 'Nombre Apellido'}`}</h2>
+                <h2 className="img__title img-text__title">{`${name || 'Nombre Apellido'}`}</h2>
 
                 <p className="img__text img-text__subtitle">
-                  {`${this.props.userData.position || 'Front-End Developer'}`}
+                  {`${position || 'Front-End Developer'}`}
                 </p>
               </div>
               <div
                 className="profile__image js__profile-container-image cards__img"
-                style={{ backgroundImage: `url("${this.props.userData.image}")` }}
+                style={{ backgroundImage: `url("${image}")` }}
               >
                 <img
                   className="image js__profile-image"
-                  src={this.props.userData.image}
+                  src={image}
                   alt="Imagen por defecto"
                 />
               </div>
               <div className="img__icons-box">
                 <ul className="icons__list img-text__title">
-                  <li className={`icon1 ${this.props.userData.email ? '' : 'hidden'}`}>
+                  <li className={`icon1 ${email ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href={`mailto:${this.props.userData.email || '#mail'} `}
+                      href={`mailto:${email || '#mail'} `}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -72,11 +84,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon2 ${this.props.userData.telf ? '' : 'hidden'}`}>
+                  <li className={`icon2 ${telf ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={`tel:${this.props.userData.telf || '#phone'}`}
+                      href={`tel:${telf || '#phone'}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -85,11 +97,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon3 ${this.props.userData.linkedin ? '' : 'hidden'}`}>
+                  <li className={`icon3 ${linkedin ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
-                      href={this.writeLinkedinUrl(this.props.userData.linkedin)}
+                      href={this.writeLinkedinUrl(linkedin)}
                       target="_blank"
                       rel="noopener noreferrer"
 
@@ -100,11 +112,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon4 ${this.props.userData.github ? '' : 'hidden'}`}>
+                  <li className={`icon4 ${github ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
-                      href={this.writeGithubUrl(this.props.userData.github)}
+                      href={this.writeGithubUrl(github)}
                       target="_blank"
                       rel="noopener noreferrer"
 
