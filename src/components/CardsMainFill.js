@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import GetImage from './GetImage';
 
 class CardsMainFill extends React.Component {
   render() {
@@ -8,7 +9,9 @@ class CardsMainFill extends React.Component {
       collapsablesId,
       handleCollapsable,
       userData,
-      changePreview
+      changePreview,
+      updateImage,
+      isImageDefault
     } = this.props;
 
     const {
@@ -17,7 +20,8 @@ class CardsMainFill extends React.Component {
       email,
       telf,
       linkedin,
-      github
+      github,
+      image
     } = userData;
 
     return (
@@ -61,7 +65,11 @@ class CardsMainFill extends React.Component {
             />
             <div className="form__fieldset-add_img_wrapper">
               <p className="form__fieldset-add_img-text">Imagen de perfil</p>
-              <button
+              <GetImage
+                image={image}
+                isImageDefault={isImageDefault}
+                updateImage={updateImage} />
+              {/* <button
                 className="form__fieldset-add_img-button js__profile-trigger"
                 type="button"
                 name="add_img"
@@ -75,7 +83,7 @@ class CardsMainFill extends React.Component {
                 className="hidden js__profile-upload-btn"
                 required
               />
-              <div className="form__fieldset-add_img-mini_container js__profile-preview"></div>
+              <div className="form__fieldset-add_img-mini_container js__profile-preview"></div> */}
             </div>
             <label
               htmlFor="email"
@@ -158,7 +166,9 @@ CardsMainFill.propTypes = {
   }),
   changePreview: PropTypes.func,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired
+  collapsablesId: PropTypes.string.isRequired,
+  updateImage: PropTypes.func.isRequired,
+  isImageDefault: PropTypes.bool.isRequired
 }
 
 export default CardsMainFill;

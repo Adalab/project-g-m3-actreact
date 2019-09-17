@@ -17,7 +17,9 @@ class CardsMain extends React.Component {
       handleCollapsable,
       collapsablesId,
       changePreview,
-      handleReset
+      handleReset,
+      updateImage,
+      isImageDefault
     } = this.props;
 
     return (
@@ -43,6 +45,8 @@ class CardsMain extends React.Component {
               handleCollapsable={handleCollapsable}
               collapsablesId={collapsablesId}
               userData={userData}
+              updateImage={updateImage}
+              isImageDefault={isImageDefault}
             />
 
             <CardsMainShare
@@ -65,7 +69,9 @@ CardsMain.propTypes = {
   handleOptionChange: PropTypes.func.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
   collapsablesId: PropTypes.string.isRequired,
-  handleReset: PropTypes.func.isRequired
+  handleReset: PropTypes.func.isRequired,
+  updateImage: PropTypes.func.isRequired,
+  isImageDefault: PropTypes.bool.isRequired
 };
 
 export default CardsMain;
