@@ -15,7 +15,8 @@ class Cards extends React.Component {
       collapsablesId, 
       handleReset,
       updateImage,
-      isImageDefault
+      isImageDefault,
+      getUrl
     } = this.props;
 
     return (
@@ -33,6 +34,7 @@ class Cards extends React.Component {
               handleReset={handleReset}
               isImageDefault={isImageDefault}
               updateImage={updateImage}
+              getUrl={getUrl}
             />
           </div>
           <Footer />
@@ -50,7 +52,9 @@ Cards.propTypes = {
   collapsablesId: PropTypes.string.isRequired, 
   handleReset: PropTypes.func.isRequired,
   updateImage: PropTypes.func.isRequired,
-  isImageDefault: PropTypes.bool.isRequired
+  isImageDefault: PropTypes.bool.isRequired,
+  getUrl: PropTypes.func.isRequired
+
 };
 
 export default Cards;

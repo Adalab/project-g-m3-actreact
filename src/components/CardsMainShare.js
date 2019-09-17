@@ -7,6 +7,7 @@ class CardsMainShare extends React.Component {
     const {
       collapsablesId,
       handleCollapsable,
+      // getUrl
     } = this.props;
 
     return (
@@ -43,7 +44,8 @@ class CardsMainShare extends React.Component {
 CardsMainShare.propTypes = {
   userData: PropTypes.object.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired
+  collapsablesId: PropTypes.string.isRequired,
+  // getUrl: PropTypes.func.isRequired
 };
 
 export default CardsMainShare;

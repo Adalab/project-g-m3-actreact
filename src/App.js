@@ -4,6 +4,7 @@ import Landing from './components/Landing';
 import Cards from "./components/Cards";
 import { Route, Switch } from 'react-router-dom';
 import {defaultData} from './components/defaultData';
+import {sendInfo} from './services/sendInfo';
 
 
 class App extends React.Component {
@@ -21,7 +22,19 @@ class App extends React.Component {
     this.handleCollapsable = this.handleCollapsable.bind(this)
     this.handleReset = this.handleReset.bind(this)
     this.updateImage = this.updateImage.bind(this)
+    this.getUrl = this.getUrl.bind(this)
     
+  }
+
+  getUrl(event){
+    
+    sendInfo(this.state.userData)
+    .then (data => {
+      console.log(data)
+      this.setState({
+        cardUrl: data.cardURL,
+      });
+    });
   }
 
   updateImage(img) {
@@ -123,7 +136,7 @@ class App extends React.Component {
         handleReset={this.handleReset}
         isImageDefault={this.state.isImageDefault}
         updateImage={this.updateImage}
-
+        getUrl={this.getUrl}
       />} 
       />
     </Switch>
