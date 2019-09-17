@@ -29,7 +29,12 @@ class CardsMainCardPreview extends React.Component {
   }
 
   render() {
-    const { userData } = this.props;
+    
+    const { 
+      userData, 
+      handleReset 
+    } = this.props;
+
     const {
       palette,
       name,
@@ -38,7 +43,7 @@ class CardsMainCardPreview extends React.Component {
       telf,
       linkedin,
       github, 
-      image
+      image,
     } = userData;
 
     return (
@@ -47,7 +52,7 @@ class CardsMainCardPreview extends React.Component {
           <div className="cards__wrapper">
             <Button 
               btnClass={'btn cards__img-button reset js__reset img-btn__text'}
-              action={this.props.handleReset}
+              action={handleReset}
               text={'reset'}
             />
             <div className={`cards__img-wrapper cards__img-wrapper-op${palette}`}>

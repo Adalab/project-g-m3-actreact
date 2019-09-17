@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 class Button extends React.Component {
 
   render() {
-    const { btnClass, handleReset, text} = this.props;
+    
+    const { 
+      btnClass, 
+      action, 
+      text
+    } = this.props;
+
     return (
       <button
         type="button"
         className={btnClass}
-        onClick={handleReset}
+        onClick={action}
       >
         {text}
       </button>

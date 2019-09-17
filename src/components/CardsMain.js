@@ -10,13 +10,14 @@ class CardsMain extends React.Component {
 
 
   render() {
+    
     const {
       userData,
       handleOptionChange,
       handleCollapsable,
       collapsablesId,
       changePreview,
-
+      handleReset
     } = this.props;
 
     return (
@@ -26,7 +27,8 @@ class CardsMain extends React.Component {
           onSubmit="writeUrl()"
         >
           <CardsMainCardPreview
-            userData={userData} />
+            userData={userData}
+            handleReset={handleReset} />
 
           <div className="form__wrapper">
             <CardsMainDesign
@@ -62,7 +64,8 @@ CardsMain.propTypes = {
   changePreview: PropTypes.func.isRequired,
   handleOptionChange: PropTypes.func.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired
+  collapsablesId: PropTypes.string.isRequired,
+  handleReset: PropTypes.func.isRequired
 };
 
 export default CardsMain;
