@@ -1,4 +1,4 @@
-import defaultImage from './DefaultImage';
+import {defaultImage} from './defaultImage';
 
 const defaultData = {
     palette: 1,
