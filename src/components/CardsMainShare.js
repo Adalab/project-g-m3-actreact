@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 
 class CardsMainShare extends React.Component {
   render() {
+
     const {
       collapsablesId,
       handleCollapsable,
