@@ -2,7 +2,6 @@ import React from 'react';
 import './App.scss';
 import Landing from './components/Landing';
 import Cards from "./components/Cards";
-import defaultImage from './components/DefaultImage';
 import { Route, Switch } from 'react-router-dom';
 import {defaultData} from './components/defaultData';
 
@@ -13,18 +12,7 @@ class App extends React.Component {
 
     this.state = {
       collapsablesId: 'design',
-
       userData: defaultData
-   /*     {
-        palette: 1,
-        name: '',
-        position: '',
-        email: '',
-        telf: '',
-        linkedin: '',
-        github: '',
-        image: defaultImage
-      } */
     };
 
     this.changePreview = this.changePreview.bind(this)
