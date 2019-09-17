@@ -6,6 +6,16 @@ import PropTypes from "prop-types";
 
 class Cards extends React.Component {
   render() {
+
+    const { 
+      userData,
+      changePreview, 
+      handleOptionChange, 
+      handleCollapsable, 
+      collapsablesId, 
+      handleReset 
+    } = this.props;
+
     return (
       <React.Fragment>
         <div className="cards-wrapper">
@@ -13,11 +23,12 @@ class Cards extends React.Component {
             <CardsHeader
             />
             <CardsMain
-              userData={this.props.userData}
-              changePreview={this.props.changePreview}
-              handleOptionChange={this.props.handleOptionChange}
-              handleCollapsable={this.props.handleCollapsable}
-              collapsablesId={this.props.collapsablesId}
+              userData={userData}
+              changePreview={changePreview}
+              handleOptionChange={handleOptionChange}
+              handleCollapsable={handleCollapsable}
+              collapsablesId={collapsablesId}
+              handleReset={handleReset}
             />
           </div>
           <Footer />
@@ -32,7 +43,8 @@ Cards.propTypes = {
   changePreview: PropTypes.func.isRequired,
   handleOptionChange: PropTypes.func.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired
+  collapsablesId: PropTypes.string.isRequired, 
+  handleReset: PropTypes.func.isRequired
 };
 
 export default Cards;

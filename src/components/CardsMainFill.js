@@ -1,8 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class CardsMainFill extends React.Component {
   render() {
+    
     const {
       collapsablesId,
       handleCollapsable,

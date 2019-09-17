@@ -1,10 +1,10 @@
-import React from "react";
-import "./App.scss";
+import React from 'react';
+import './App.scss';
 import Landing from './components/Landing';
 import Cards from "./components/Cards";
-import defaultImage from "./components/DefaultImage";
+import defaultImage from './components/DefaultImage';
 import { Route, Switch } from 'react-router-dom';
-
+import {defaultData} from './components/defaultData';
 
 
 class App extends React.Component {
@@ -29,6 +29,12 @@ class App extends React.Component {
     this.changePreview = this.changePreview.bind(this)
     this.handleOptionChange = this.handleOptionChange.bind(this)
     this.handleCollapsable = this.handleCollapsable.bind(this)
+    this.handleReset = this.handleReset.bind(this)
+  }
+
+  handleReset() {
+    this.setState({userData: defaultData});
+    console.log('holi');
   }
 
   handleCollapsable(event) {
@@ -107,6 +113,7 @@ class App extends React.Component {
         handleOptionChange={this.handleOptionChange}
         handleCollapsable={this.handleCollapsable}
         collapsablesId={this.state.collapsablesId}
+        handleReset={this.handleReset}
       />} 
       />
     </Switch>
