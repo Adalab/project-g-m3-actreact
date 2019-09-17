@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   getUrl(event){
-    
+    event.preventDefault()
     sendInfo(this.state.userData)
     .then (data => {
       console.log(data)
@@ -41,7 +41,7 @@ class App extends React.Component {
    this.setState(prevState => {
       const newUserData = {
           ...prevState.userData,
-          image: img
+          photo: img
         }
       localStorage.setItem('lsUserData', JSON.stringify(newUserData));
      return {

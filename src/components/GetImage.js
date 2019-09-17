@@ -28,14 +28,14 @@ class GetImage extends Component {
     this.props.updateImage(image);
   }
 
-  getPreview(isDefault, image) {
-    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
+  getPreview(isDefault, photo) {
+    return (!isDefault) ? {backgroundImage: `url(${photo})`} : {};
   }
 
   render() {
     const {
       isImageDefault, 
-      image
+      photo
       } = this.props;
 
     return (
@@ -61,7 +61,7 @@ class GetImage extends Component {
         
         <div 
         className="form__fieldset-add_img-mini_container js__profile-preview"
-        style={this.getPreview(isImageDefault, image)}>
+        style={this.getPreview(isImageDefault, photo)}>
         </div>
        </Fragment>
     );
@@ -70,7 +70,7 @@ class GetImage extends Component {
 
 GetImage.propTypes = {
   isImageDefault: PropTypes.bool.isRequired,
-  image: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
   updateImage: PropTypes.func.isRequired
 };
 
