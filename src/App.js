@@ -14,7 +14,8 @@ class App extends React.Component {
     this.state = {
       collapsablesId: 'design',
 
-      userData: {
+      userData: defaultData
+   /*     {
         palette: 1,
         name: '',
         position: '',
@@ -23,7 +24,7 @@ class App extends React.Component {
         linkedin: '',
         github: '',
         image: defaultImage
-      }
+      } */
     };
 
     this.changePreview = this.changePreview.bind(this)
@@ -34,7 +35,7 @@ class App extends React.Component {
 
   handleReset() {
     this.setState({userData: defaultData});
-    console.log('holi');
+    localStorage.removeItem('lsUserData');
   }
 
   handleCollapsable(event) {
