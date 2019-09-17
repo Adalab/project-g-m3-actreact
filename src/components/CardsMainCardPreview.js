@@ -43,7 +43,7 @@ class CardsMainCardPreview extends React.Component {
       telf,
       linkedin,
       github, 
-      image,
+      image
     } = userData;
 
     return (
@@ -70,7 +70,7 @@ class CardsMainCardPreview extends React.Component {
                 <img
                   className="image js__profile-image"
                   src={image}
-                  alt="Imagen por defecto"
+                  alt= {`Foto ${name || 'por defecto'}`}
                 />
               </div>
               <div className="img__icons-box">

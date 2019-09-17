@@ -12,14 +12,32 @@ class App extends React.Component {
 
     this.state = {
       collapsablesId: 'design',
-      userData: defaultData
+      userData: defaultData,
+      isImageDefault: true
     };
 
     this.changePreview = this.changePreview.bind(this)
     this.handleOptionChange = this.handleOptionChange.bind(this)
     this.handleCollapsable = this.handleCollapsable.bind(this)
     this.handleReset = this.handleReset.bind(this)
+    this.updateImage = this.updateImage.bind(this)
+    
   }
+
+  updateImage(img) {
+   this.setState(prevState => {
+      const newUserData = {
+          ...prevState.userData,
+          image: img
+        }
+      localStorage.setItem('lsUserData', JSON.stringify(newUserData));
+     return {
+      userData: newUserData,
+      isImageDefault: false
+     
+     }
+   });
+ }
 
   handleReset() {
     this.setState({userData: defaultData});
@@ -103,6 +121,9 @@ class App extends React.Component {
         handleCollapsable={this.handleCollapsable}
         collapsablesId={this.state.collapsablesId}
         handleReset={this.handleReset}
+        isImageDefault={this.state.isImageDefault}
+        updateImage={this.updateImage}
+
       />} 
       />
     </Switch>
