@@ -31,6 +31,8 @@ class App extends React.Component {
     this.handleCollapsable = this.handleCollapsable.bind(this)
   }
 
+  handleReset() {}
+
   handleCollapsable(event) {
     const newCollapsablesId = event.currentTarget.getAttribute('data-id');
     this.setState(prevState => {

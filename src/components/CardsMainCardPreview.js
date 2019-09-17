@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import Button from './Button';
 import PropTypes from 'prop-types';
 
 class CardsMainCardPreview extends React.Component {
@@ -44,12 +45,11 @@ class CardsMainCardPreview extends React.Component {
       <section className="cards__img-section">
         <div className="container">
           <div className="cards__wrapper">
-            <button
-              type="button"
-              className="btn cards__img-button reset js__reset img-btn__text"
-            >
-              reset
-            </button>
+            <Button 
+              btnClass={'btn cards__img-button reset js__reset img-btn__text'}
+              action={this.props.handleReset}
+              text={'reset'}
+            />
             <div className={`cards__img-wrapper cards__img-wrapper-op${palette}`}>
               <div className="img__text-box">
                 <h2 className="img__title img-text__title">{`${name || 'Nombre Apellido'}`}</h2>
