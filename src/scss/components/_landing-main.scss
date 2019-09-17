@@ -1,19 +1,19 @@
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
 .landing__main {
-  min-height: 270px;
   padding-top: 36px;
   background-color: $color-landing-bg;
-  position: relative;
   @media all and (min-width: 768px){
-    padding-top: 31px;
-    min-height: 460px;
+    padding-top: 50px;
   }
 }
 .landing__main .container{
   @include centered();
   flex-direction: column;
-  @media all and (min-width: 768px){
-    margin: 0px 175px;
-  }
 }
 .landing__main-list {
   @include clear-list();

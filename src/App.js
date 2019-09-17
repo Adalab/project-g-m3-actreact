@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.scss";
-// import Landing from './components/Landing';
+import Landing from './components/Landing';
 import Cards from "./components/Cards";
 import defaultImage from "./components/DefaultImage";
+import { Route, Switch } from 'react-router-dom';
 
 
 
@@ -96,13 +97,20 @@ class App extends React.Component {
   }
 
   render() {
-    return <Cards
-      userData={this.state.userData}
-      changePreview={this.changePreview}
-      handleOptionChange={this.handleOptionChange}
-      handleCollapsable={this.handleCollapsable}
-      collapsablesId={this.state.collapsablesId}
-    />;
+    return (
+    // 
+    <Switch>
+      <Route exact path="/" component={Landing} />
+      <Route path="/cards" render={() => <Cards
+        userData={this.state.userData}
+        changePreview={this.changePreview}
+        handleOptionChange={this.handleOptionChange}
+        handleCollapsable={this.handleCollapsable}
+        collapsablesId={this.state.collapsablesId}
+      />} 
+      />
+    </Switch>
+    );
   }
 }
 
