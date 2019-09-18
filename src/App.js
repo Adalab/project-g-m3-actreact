@@ -137,6 +137,7 @@ class App extends React.Component {
         isImageDefault={this.state.isImageDefault}
         updateImage={this.updateImage}
         getUrl={this.getUrl}
+        cardUrl={this.state.cardUrl}
       />} 
       />
     </Switch>
