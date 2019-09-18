@@ -3,12 +3,12 @@ import {defaultImage} from './defaultImage';
 const defaultData = {
     palette: 1,
     name: '',
-    position: '',
+    job: '',
     email: '',
     telf: '',
     linkedin: '',
     github: '',
-    image: defaultImage
+    photo: defaultImage
 }
 
 export {defaultData};

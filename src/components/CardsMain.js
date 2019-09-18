@@ -19,14 +19,17 @@ class CardsMain extends React.Component {
       changePreview,
       handleReset,
       updateImage,
-      isImageDefault
+      isImageDefault,
+      getUrl,
+      cardUrl
     } = this.props;
 
     return (
       <main className="cards__main">
         <form
           className="form__all-sections form__section-fill"
-          onSubmit="writeUrl()"
+          onSubmit={getUrl}
+          // onSubmit="writeUrl()"
         >
           <CardsMainCardPreview
             userData={userData}
@@ -53,6 +56,8 @@ class CardsMain extends React.Component {
               handleCollapsable={handleCollapsable}
               collapsablesId={collapsablesId}
               userData={userData}
+              getUrl={getUrl}
+              cardUrl={cardUrl}
             />
 
 
@@ -68,10 +73,12 @@ CardsMain.propTypes = {
   changePreview: PropTypes.func.isRequired,
   handleOptionChange: PropTypes.func.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired,
+  collapsablesId: PropTypes.string,
   handleReset: PropTypes.func.isRequired,
   updateImage: PropTypes.func.isRequired,
-  isImageDefault: PropTypes.bool.isRequired
+  isImageDefault: PropTypes.bool.isRequired,
+  getUrl: PropTypes.func.isRequired,
+  cardUrl: PropTypes.string
 };
 
 export default CardsMain;

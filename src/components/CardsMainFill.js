@@ -16,12 +16,12 @@ class CardsMainFill extends React.Component {
 
     const {
       name,
-      position,
+      job,
       email,
       telf,
       linkedin,
       github,
-      image
+      photo
     } = userData;
 
     return (
@@ -48,7 +48,7 @@ class CardsMainFill extends React.Component {
               value={name}
             />
             <label
-              htmlFor="position"
+              htmlFor="job"
               className="form__fieldset-content job__label required"
             >
               Puesto*
@@ -56,34 +56,20 @@ class CardsMainFill extends React.Component {
             <input
               type="text"
               className="form__fieldset-content-gap gap2 job"
-              id="position"
-              name="position"
+              id="job"
+              name="job"
               placeholder="Ej: Front-end unicorn"
               required
               onChange={changePreview}
-              value={position}
+              value={job}
             />
             <div className="form__fieldset-add_img_wrapper">
               <p className="form__fieldset-add_img-text">Imagen de perfil</p>
               <GetImage
-                image={image}
+                photo={photo}
                 isImageDefault={isImageDefault}
                 updateImage={updateImage} />
-              {/* <button
-                className="form__fieldset-add_img-button js__profile-trigger"
-                type="button"
-                name="add_img"
-              >
-                Añadir imagen
-              </button>
-              <input
-                type="file"
-                name="image"
-                id="img-selector"
-                className="hidden js__profile-upload-btn"
-                required
-              />
-              <div className="form__fieldset-add_img-mini_container js__profile-preview"></div> */}
+              
             </div>
             <label
               htmlFor="email"
@@ -157,8 +143,8 @@ CardsMainFill.propTypes = {
   userData: PropTypes.shape({
     palette: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     telf: PropTypes.string,
     linkedin: PropTypes.string.isRequired,
@@ -166,7 +152,7 @@ CardsMainFill.propTypes = {
   }),
   changePreview: PropTypes.func,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired,
+  collapsablesId: PropTypes.string,
   updateImage: PropTypes.func.isRequired,
   isImageDefault: PropTypes.bool.isRequired
 }

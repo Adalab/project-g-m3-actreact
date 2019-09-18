@@ -38,12 +38,12 @@ class CardsMainCardPreview extends React.Component {
     const {
       palette,
       name,
-      position,
+      job,
       email,
       telf,
       linkedin,
       github, 
-      image
+      photo
     } = userData;
 
     return (
@@ -60,16 +60,16 @@ class CardsMainCardPreview extends React.Component {
                 <h2 className="img__title img-text__title">{`${name || 'Nombre Apellido'}`}</h2>
 
                 <p className="img__text img-text__subtitle">
-                  {`${position || 'Front-End Developer'}`}
+                  {`${job || 'Front-End Developer'}`}
                 </p>
               </div>
               <div
                 className="profile__image js__profile-container-image cards__img"
-                style={{ backgroundImage: `url("${image}")` }}
+                style={{ backgroundImage: `url("${photo}")` }}
               >
                 <img
                   className="image js__profile-image"
-                  src={image}
+                  src={photo}
                   alt= {`Foto ${name || 'por defecto'}`}
                 />
               </div>
@@ -146,8 +146,8 @@ CardsMainCardPreview.propTypes = {
   userData: PropTypes.shape({
     palette: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     telf: PropTypes.string,
     linkedin: PropTypes.string.isRequired,
