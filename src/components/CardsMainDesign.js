@@ -132,7 +132,7 @@ CardsMainDesign.propTypes = {
   palette: PropTypes.number.isRequired,
   handleOptionChange: PropTypes.func,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired
+  collapsablesId: PropTypes.string
 }
 
 export default CardsMainDesign;

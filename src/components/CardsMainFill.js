@@ -152,7 +152,7 @@ CardsMainFill.propTypes = {
   }),
   changePreview: PropTypes.func,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired,
+  collapsablesId: PropTypes.string,
   updateImage: PropTypes.func.isRequired,
   isImageDefault: PropTypes.bool.isRequired
 }

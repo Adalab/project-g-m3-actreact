@@ -49,7 +49,7 @@ Cards.propTypes = {
   changePreview: PropTypes.func.isRequired,
   handleOptionChange: PropTypes.func.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string.isRequired, 
+  collapsablesId: PropTypes.string, 
   handleReset: PropTypes.func.isRequired,
   updateImage: PropTypes.func.isRequired,
   isImageDefault: PropTypes.bool.isRequired,
