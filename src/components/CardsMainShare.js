@@ -19,7 +19,7 @@ class CardsMainShare extends React.Component {
           </div>
           <div className="rollContainer-js">
             <div className="share-button-create">
-              <button className="btn button-create" type="submit">
+              <button className={`btn button-create ${cardUrl ? 'greyButton' : '' } `} type="submit">
                 <span className="share_button-icon">Crear tarjeta</span>
               </button>
             </div>
