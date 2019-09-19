@@ -18,7 +18,7 @@ class CardsMainFill extends React.Component {
       name,
       job,
       email,
-      telf,
+      phone,
       linkedin,
       github,
       photo
@@ -71,6 +71,18 @@ class CardsMainFill extends React.Component {
                 updateImage={updateImage} />
               
             </div>
+            <label htmlFor="phone" className="form__fieldset-content">
+              Teléfono
+            </label>
+            <input
+              type="tel"
+              className="form__fieldset-content-gap phone"
+              id="phone"
+              name="phone"
+              placeholder="Ej: 555-55-55-55"
+              onChange={changePreview}
+              value={phone}
+            />
             <label
               htmlFor="email"
               className="form__fieldset-content mail__label required"
@@ -86,18 +98,6 @@ class CardsMainFill extends React.Component {
               required
               onChange={changePreview}
               value={email}
-            />
-            <label htmlFor="telf" className="form__fieldset-content">
-              Teléfono
-            </label>
-            <input
-              type="tel"
-              className="form__fieldset-content-gap phone"
-              id="telf"
-              name="telf"
-              placeholder="Ej: 555-55-55-55"
-              onChange={changePreview}
-              value={telf}
             />
             <label
               htmlFor="linkedin"
@@ -146,7 +146,7 @@ CardsMainFill.propTypes = {
     job: PropTypes.string.isRequired,
     photo: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    telf: PropTypes.string,
+    phone: PropTypes.string,
     linkedin: PropTypes.string.isRequired,
     github: PropTypes.string.isRequired
   }),

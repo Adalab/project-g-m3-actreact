@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Twitter from './Twitter';
 
 class CardsMainShare extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class CardsMainShare extends React.Component {
           </div>
           <div className="rollContainer-js">
             <div className="share-button-create">
-              <button className="btn button-create" type="submit">
+              <button className={`btn button-create ${cardUrl ? 'greyButton' : '' } `} type="submit">
                 <span className="share_button-icon">Crear tarjeta</span>
               </button>
             </div>
@@ -33,9 +34,7 @@ class CardsMainShare extends React.Component {
               {cardUrl}
               </a>
             </div>
-            <a className="button-twitter" target="_blank" href="#twitter">
-              <p className="text-link-twitter">Compartir en twitter</p>
-            </a>
+           <Twitter cardUrl= {cardUrl}/>
           </div>
           <div className="line-bottom"></div>
         </div>
