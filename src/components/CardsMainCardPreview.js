@@ -75,6 +75,19 @@ class CardsMainCardPreview extends React.Component {
               </div>
               <div className="img__icons-box">
                 <ul className="icons__list img-text__title">
+                  <li className={`icon2 ${phone ? '' : 'hidden'}`}>
+                    {" "}
+                    <a
+                      className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
+                      href={`tel:${phone || '#phone'}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="span__text">
+                        Si quieres llamarme, este es mi número.
+                      </span>
+                    </a>
+                  </li>
                   <li className={`icon1 ${email ? '' : 'hidden'}`}>
                     {" "}
                     <a
@@ -86,19 +99,6 @@ class CardsMainCardPreview extends React.Component {
                     >
                       <span className="span__text">
                         Si quieres enviarme un mail, visita este enlace.
-                      </span>
-                    </a>
-                  </li>
-                  <li className={`icon2 ${phone ? '' : 'hidden'}`}>
-                    {" "}
-                    <a
-                      className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={`tel:${phone || '#phone'}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="span__text">
-                        Si quieres llamarme, este es mi número.
                       </span>
                     </a>
                   </li>
