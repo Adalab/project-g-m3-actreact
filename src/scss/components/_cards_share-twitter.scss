@@ -9,7 +9,11 @@
   text-transform: lowercase;
   color: $intermediate-grey;
   font-size: $font-md;
-  margin-top: 20px;
+  margin: 20px 0;
+  text-align: center; 
+}
+.orange-text{
+  color: $dull-orange;
 }
 .share__title-twitter::first-letter{
   text-transform: uppercase;
