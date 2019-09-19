@@ -18,7 +18,8 @@ class Cards extends React.Component {
       isImageDefault,
       getUrl,
       cardUrl,
-      isSend
+      isSend,
+      errors
     } = this.props;
 
     return (
@@ -39,6 +40,7 @@ class Cards extends React.Component {
               getUrl={getUrl}
               cardUrl={cardUrl}
               isSend={isSend}
+              errors={errors}
             />
           </div>
           <Footer />
@@ -59,7 +61,8 @@ Cards.propTypes = {
   isImageDefault: PropTypes.bool.isRequired,
   getUrl: PropTypes.func.isRequired,
   cardUrl: PropTypes.string,
-  isSend: PropTypes.bool.isRequired
+  isSend: PropTypes.bool.isRequired,
+  errors: PropTypes.objectOf(PropTypes.string)
 };
 
 export default Cards;

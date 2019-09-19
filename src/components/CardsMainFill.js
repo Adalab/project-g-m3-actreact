@@ -11,7 +11,8 @@ class CardsMainFill extends React.Component {
       userData,
       changePreview,
       updateImage,
-      isImageDefault
+      isImageDefault,
+      errors
     } = this.props;
 
     const {
@@ -39,10 +40,10 @@ class CardsMainFill extends React.Component {
             </label>
             <input
               type="text"
-              className="form__fieldset-content-gap name"
+              className={`form__fieldset-content-gap name ${errors.name ? 'orange-error' : ''}`}
               id="name"
               name="name"
-              placeholder="Ej: Sally Jill"
+              placeholder={errors.name ? errors.name : 'Ej: Sally Jill'}
               required
               onChange={changePreview}
               value={name}
@@ -55,10 +56,10 @@ class CardsMainFill extends React.Component {
             </label>
             <input
               type="text"
-              className="form__fieldset-content-gap gap2 job"
+              className={`form__fieldset-content-gap gap2 job ${errors.job ? 'orange-error' : ''}`}
               id="job"
               name="job"
-              placeholder="Ej: Front-end unicorn"
+              placeholder={errors.job ? errors.job : 'Ej: Front-end unicorn'}
               required
               onChange={changePreview}
               value={job}
@@ -91,10 +92,10 @@ class CardsMainFill extends React.Component {
             </label>
             <input
               type="email"
-              className="form__fieldset-content-gap mail"
+              className={`form__fieldset-content-gap mail ${errors.email ? 'orange-error' : ''}`}
               id="email"
               name="email"
-              placeholder="Ej: sally-hill@gmail.com"
+              placeholder={errors.email ? errors.email : 'Ej: sally-hill@gmail.com'}
               required
               onChange={changePreview}
               value={email}
@@ -107,10 +108,10 @@ class CardsMainFill extends React.Component {
             </label>
             <input
               type="text"
-              className="form__fieldset-content-gap linkedin_input"
+              className={`form__fieldset-content-gap linkedin_input ${errors.linkedin ? 'orange-error' : ''}`}
               id="linkedin"
               name="linkedin"
-              placeholder="Ej: sally.hill"
+              placeholder={errors.linkedin ? errors.linkedin : 'Ej: sally.hill'}
               required
               onChange={changePreview}
               value={linkedin}
@@ -123,10 +124,10 @@ class CardsMainFill extends React.Component {
             </label>
             <input
               type="text"
-              className="form__fieldset-content-gap github_input"
+              className={`form__fieldset-content-gap github_input ${errors.github ? 'orange-error' : ''}`}
               id="github"
               name="github"
-              placeholder="Ej: @sally-hill"
+              placeholder={errors.github ? errors.github : 'Ej: @sally-hill'}
               required
               onChange={changePreview}
               value={github}
@@ -154,7 +155,9 @@ CardsMainFill.propTypes = {
   handleCollapsable: PropTypes.func.isRequired,
   collapsablesId: PropTypes.string,
   updateImage: PropTypes.func.isRequired,
-  isImageDefault: PropTypes.bool.isRequired
+  isImageDefault: PropTypes.bool.isRequired,
+  errors: PropTypes.objectOf(PropTypes.string)
+
 }
 
 export default CardsMainFill;

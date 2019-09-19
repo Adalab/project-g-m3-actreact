@@ -23,9 +23,9 @@
   font-size: 14px;
   color: $color-card-fill_form-section-h2;
   border-style: none;
- }
-  @media all and (min-width: 768px){
-    .form__fieldset .container{
+}
+@media all and (min-width: 768px){
+  .form__fieldset .container{
     margin-right: 31px;
   }
 }
@@ -125,6 +125,9 @@
 .open .form__fieldset-main_title:after {
   transform: rotate(-180deg);
 }
-.red{
-  color: red;
+.orange-error{
+  border: 1px solid $dull-orange;
+  &::placeholder {
+    color: $dull-orange;
+  }
 }

@@ -22,7 +22,8 @@ class CardsMain extends React.Component {
       isImageDefault,
       getUrl,
       cardUrl,
-      isSend
+      isSend,
+      errors
     } = this.props;
 
     return (
@@ -50,6 +51,7 @@ class CardsMain extends React.Component {
               userData={userData}
               updateImage={updateImage}
               isImageDefault={isImageDefault}
+              errors={errors}
             />
 
             <CardsMainShare
@@ -80,7 +82,8 @@ CardsMain.propTypes = {
   isImageDefault: PropTypes.bool.isRequired,
   getUrl: PropTypes.func.isRequired,
   cardUrl: PropTypes.string,
-  isSend: PropTypes.bool.isRequired
+  isSend: PropTypes.bool.isRequired,
+  errors: PropTypes.objectOf(PropTypes.string)
 };
 
 export default CardsMain;

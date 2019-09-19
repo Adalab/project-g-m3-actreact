@@ -34,6 +34,7 @@ class App extends React.Component {
     if (this.validateForm(this.state.userData)) {
       this.setState({
         isSend: true,
+        collapsablesId: 'share'
       });
       sendInfo(this.state.userData)
         .then(data => {
@@ -115,11 +116,11 @@ class App extends React.Component {
       }
     }
     this.setState({
-      errors: errors
+      errors: errors,
+      collapsablesId: 'fill'
     })
     return formIsValid;    
   };
-
 
   updateImage(img) {
     this.setState(prevState => {
@@ -227,6 +228,7 @@ class App extends React.Component {
           getUrl={this.getUrl}
           cardUrl={this.state.cardUrl}
           isSend={this.state.isSend}
+          errors={this.state.errors}
         />}
         />
       </Switch>
