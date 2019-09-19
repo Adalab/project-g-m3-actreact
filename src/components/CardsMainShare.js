@@ -20,7 +20,7 @@ class CardsMainShare extends React.Component {
           </div>
           <div className="rollContainer-js">
             <div className="share-button-create">
-              <button className={`btn button-create ${cardUrl ? 'greyButton' : '' } `} type="submit">
+              <button className={`btn button-create ${cardUrl ? 'greyButton' : '' } `} type="submit" disabled={cardUrl}>
                 <span className="share_button-icon">Crear tarjeta</span>
               </button>
             </div>
@@ -29,7 +29,7 @@ class CardsMainShare extends React.Component {
         </div>
         <div className={`content__twitter-container hide-twitter`}>
           <p className={`share__title-twitter orange-text ${isSend ? '' : 'hidden'}`}>La tarjeta se está creando...</p>
-          <div className={`share__text-twitter ${cardUrl ? '' : 'hidden'}`}>
+          <div className={`share__text-twitter ${cardUrl && !isSend ? '' : 'hidden'}`}>
             <p className="share__title-twitter">La tarjeta ha sido creada:</p>
             <div className="link-twitter">
               <a className="twitter-url" href={cardUrl} target="_blank" rel="noopener noreferrer">

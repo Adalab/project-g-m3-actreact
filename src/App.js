@@ -58,7 +58,11 @@ class App extends React.Component {
  }
 
   handleReset() {
-    this.setState({userData: defaultData});
+    this.setState({
+      userData: defaultData,
+      cardUrl: '',
+      isSend: false
+    });
     localStorage.removeItem('lsUserData');
   }
 
