@@ -14,7 +14,8 @@ class App extends React.Component {
     this.state = {
       collapsablesId: 'design',
       userData: defaultData,
-      isImageDefault: true
+      isImageDefault: true,
+      isSend: false
     };
 
     this.changePreview = this.changePreview.bind(this)
@@ -28,11 +29,15 @@ class App extends React.Component {
 
   getUrl(event){
     event.preventDefault()
+    this.setState({
+      isSend: true
+    });
     sendInfo(this.state.userData)
     .then (data => {
       console.log(data)
       this.setState({
         cardUrl: data.cardURL,
+        isSend: false
       });
     });
   }
@@ -138,6 +143,7 @@ class App extends React.Component {
         updateImage={this.updateImage}
         getUrl={this.getUrl}
         cardUrl={this.state.cardUrl}
+        isSend={this.state.isSend}
       />} 
       />
     </Switch>

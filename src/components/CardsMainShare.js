@@ -8,7 +8,8 @@ class CardsMainShare extends React.Component {
     const {
       collapsablesId,
       handleCollapsable,
-      cardUrl
+      cardUrl,
+      isSend
     } = this.props;
 
     return (
@@ -26,8 +27,9 @@ class CardsMainShare extends React.Component {
           </div>
           <div className="line-bottom"></div>
         </div>
-        <div className={`content__twitter-container hide-twitter ${cardUrl ? '' : 'hidden'}`}>
-          <div className="share__text-twitter">
+        <div className={`content__twitter-container hide-twitter`}>
+          <p className={`share__title-twitter orange-text ${isSend ? '' : 'hidden'}`}>La tarjeta se está creando...</p>
+          <div className={`share__text-twitter ${cardUrl ? '' : 'hidden'}`}>
             <p className="share__title-twitter">La tarjeta ha sido creada:</p>
             <div className="link-twitter">
               <a className="twitter-url" href={cardUrl} target="_blank" rel="noopener noreferrer">
@@ -36,7 +38,7 @@ class CardsMainShare extends React.Component {
             </div>
            <Twitter cardUrl= {cardUrl}/>
           </div>
-          <div className="line-bottom"></div>
+          <div className={`line-bottom ${cardUrl ? '' : 'hidden'}`}></div>
         </div>
       </fieldset>
     );
@@ -47,7 +49,8 @@ CardsMainShare.propTypes = {
   userData: PropTypes.object.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
   collapsablesId: PropTypes.string,
-  cardUrl: PropTypes.string
+  cardUrl: PropTypes.string,
+  isSend: PropTypes.bool.isRequired
 };
 
 export default CardsMainShare;
