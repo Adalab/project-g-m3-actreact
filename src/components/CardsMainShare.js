@@ -9,6 +9,7 @@ class CardsMainShare extends React.Component {
       collapsablesId,
       handleCollapsable,
       cardUrl,
+      getUrl,
       isSend
     } = this.props;
 
@@ -20,7 +21,7 @@ class CardsMainShare extends React.Component {
           </div>
           <div className="rollContainer-js">
             <div className="share-button-create">
-              <button className={`btn button-create ${cardUrl ? 'greyButton' : '' } `} type="submit" disabled={cardUrl}>
+              <button className={`btn button-create ${cardUrl ? 'greyButton' : '' } `} type="button" onClick={getUrl} disabled={cardUrl}>
                 <span className="share_button-icon">Crear tarjeta</span>
               </button>
             </div>
@@ -50,7 +51,8 @@ CardsMainShare.propTypes = {
   handleCollapsable: PropTypes.func.isRequired,
   collapsablesId: PropTypes.string,
   cardUrl: PropTypes.string,
-  isSend: PropTypes.bool.isRequired
+  isSend: PropTypes.bool.isRequired,
+
 };
 
 export default CardsMainShare;

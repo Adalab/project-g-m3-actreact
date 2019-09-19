@@ -29,8 +29,7 @@ class CardsMain extends React.Component {
       <main className="cards__main">
         <form
           className="form__all-sections form__section-fill"
-          onSubmit={getUrl}
-          // onSubmit="writeUrl()"
+          
         >
           <CardsMainCardPreview
             userData={userData}
