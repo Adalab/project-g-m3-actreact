@@ -40,7 +40,7 @@ class CardsMainCardPreview extends React.Component {
       name,
       job,
       email,
-      telf,
+      phone,
       linkedin,
       github, 
       photo
@@ -89,11 +89,11 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon2 ${telf ? '' : 'hidden'}`}>
+                  <li className={`icon2 ${phone ? '' : 'hidden'}`}>
                     {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={`tel:${telf || '#phone'}`}
+                      href={`tel:${phone || '#phone'}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -149,7 +149,7 @@ CardsMainCardPreview.propTypes = {
     job: PropTypes.string.isRequired,
     photo: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    telf: PropTypes.string,
+    phone: PropTypes.string,
     linkedin: PropTypes.string.isRequired,
     github: PropTypes.string.isRequired
   })

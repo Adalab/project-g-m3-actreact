@@ -55,7 +55,6 @@ class GetImage extends Component {
           name="image"
           id="img-selector"
           className="hidden js__profile-upload-btn" 
-          required
           onChange={this.uploadImage} 
         />
         

@@ -5,7 +5,7 @@ const defaultData = {
     name: '',
     job: '',
     email: '',
-    telf: '',
+    phone: '',
     linkedin: '',
     github: '',
     photo: defaultImage
