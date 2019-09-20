@@ -39,7 +39,6 @@ class App extends React.Component {
       });
       sendInfo(this.state.userData)
         .then(data => {
-          console.log(data)
           this.setState({
             cardUrl: data.cardURL,
             isSend: false

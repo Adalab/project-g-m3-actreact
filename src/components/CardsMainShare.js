@@ -28,7 +28,7 @@ class CardsMainShare extends React.Component {
           <div className="line-bottom"></div>
         </div>
         <div className={`content__twitter-container hide-twitter`}>
-          <p className={`share__title-twitter orange-text ${isSend ? '' : 'hidden'}`}>La tarjeta se está creando...</p>
+          <p className={`share__title-twitter orange-text ${isSend ? '' : 'hidden'}`}>La tarjeta se está creando</p>
           <div className={`share__text-twitter ${cardUrl && !isSend ? '' : 'hidden'}`}>
             <p className="share__title-twitter">La tarjeta ha sido creada:</p>
             <div className="link-twitter">
