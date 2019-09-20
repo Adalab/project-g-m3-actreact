@@ -8,7 +8,6 @@ import { sendInfo } from './services/sendInfo';
 import { validateForm } from './data/validateForm';
 
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -152,7 +151,6 @@ class App extends React.Component {
 
   render() {
     return (
-      // 
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/cards" render={() => <Cards
