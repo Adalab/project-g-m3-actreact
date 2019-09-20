@@ -5,65 +5,62 @@ import CardsMainFill from './CardsMainFill';
 import CardsMainShare from './CardsMainShare';
 import PropTypes from 'prop-types';
 
+const CardsMain = props => {
+  const {
+    userData,
+    handleOptionChange,
+    handleCollapsable,
+    collapsablesId,
+    changePreview,
+    handleReset,
+    updateImage,
+    isImageDefault,
+    getUrl,
+    cardUrl,
+    isSend,
+    errors
+  } = props;
 
-class CardsMain extends React.Component {
-  render() {
-    const {
-      userData,
-      handleOptionChange,
-      handleCollapsable,
-      collapsablesId,
-      changePreview,
-      handleReset,
-      updateImage,
-      isImageDefault,
-      getUrl,
-      cardUrl,
-      isSend,
-      errors
-    } = this.props;
+  return (
+    <main className="cards__main">
+      <form
+        className="form__all-sections form__section-fill"
+      >
+        <CardsMainCardPreview
+          userData={userData}
+          handleReset={handleReset} />
 
-    return (
-      <main className="cards__main">
-        <form
-          className="form__all-sections form__section-fill"
-        >
-          <CardsMainCardPreview
+        <div className="form__wrapper">
+          <CardsMainDesign
+            handleOptionChange={handleOptionChange}
+            handleCollapsable={handleCollapsable}
+            collapsablesId={collapsablesId}
+            palette={userData.palette}
+          />
+
+          <CardsMainFill
+            changePreview={changePreview}
+            handleCollapsable={handleCollapsable}
+            collapsablesId={collapsablesId}
             userData={userData}
-            handleReset={handleReset} />
+            updateImage={updateImage}
+            isImageDefault={isImageDefault}
+            errors={errors}
+          />
 
-          <div className="form__wrapper">
-            <CardsMainDesign
-              handleOptionChange={handleOptionChange}
-              handleCollapsable={handleCollapsable}
-              collapsablesId={collapsablesId}
-              palette={userData.palette}
-            />
+          <CardsMainShare
+            handleCollapsable={handleCollapsable}
+            collapsablesId={collapsablesId}
+            userData={userData}
+            getUrl={getUrl}
+            cardUrl={cardUrl}
+            isSend={isSend}
+          />
 
-            <CardsMainFill
-              changePreview={changePreview}
-              handleCollapsable={handleCollapsable}
-              collapsablesId={collapsablesId}
-              userData={userData}
-              updateImage={updateImage}
-              isImageDefault={isImageDefault}
-              errors={errors}
-            />
-
-            <CardsMainShare
-              handleCollapsable={handleCollapsable}
-              collapsablesId={collapsablesId}
-              userData={userData}
-              getUrl={getUrl}
-              cardUrl={cardUrl}
-              isSend={isSend}
-            />
-
-          </div>
-        </form>
-      </main>
-    );
-  }
+        </div>
+      </form>
+    </main>
+  );
 }
 
 CardsMain.propTypes = {
