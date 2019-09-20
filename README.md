@@ -1,5 +1,7 @@
+![actReact](./src/images/actreact-logo.png)
 
-## actReact
+
+## actReact - Awesome profile cards
 
 Proyecto generador de tarjetas interactivas en React con código heredado. 
 
@@ -27,5 +29,11 @@ Los objetivos de realizar este proyecto son:
 
 5. ¡Compartela en Twitter!
 
+### Cómo puedes usar el proyecto
+
+Si te clonas este proyecto puedes acceder a el poniendo en la terminal:
+ npm start 
+ 
+Podrás previsualizarlo en el puerto  http://localhost:3000 
 
 ### Proyecto realizado por actReact, alumnas de la promoción Grace.
