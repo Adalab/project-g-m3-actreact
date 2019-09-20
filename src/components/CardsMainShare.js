@@ -25,7 +25,7 @@ class CardsMainShare extends React.Component {
               </button>
             </div>
           </div>
-          <div className="line-bottom"></div>
+          <div className="line-bottom share"></div>
         </div>
         <div className={`content__twitter-container hide-twitter`}>
           <p className={`share__title-twitter orange-text ${isSend ? '' : 'hidden'}`}>La tarjeta se está creando</p>

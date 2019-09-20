@@ -1,7 +1,7 @@
 .cards-wrapper{
   display: grid;
   grid-template-rows: 1fr auto;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 .cards__main-wrapper{
   grid-row: 1fr;

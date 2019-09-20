@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import { defaultData } from './data/defaultData';
 import { sendInfo } from './services/sendInfo';
 import { validateForm } from './data/validateForm';
+import Footer from './components/Footer';
 
 
 class App extends React.Component {
@@ -151,24 +152,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/cards" render={() => <Cards
-          userData={this.state.userData}
-          changePreview={this.changePreview}
-          handleOptionChange={this.handleOptionChange}
-          handleCollapsable={this.handleCollapsable}
-          collapsablesId={this.state.collapsablesId}
-          handleReset={this.handleReset}
-          isImageDefault={this.state.isImageDefault}
-          updateImage={this.updateImage}
-          getUrl={this.getUrl}
-          cardUrl={this.state.cardUrl}
-          isSend={this.state.isSend}
-          errors={this.state.errors}
-        />}
-        />
-      </Switch>
+      <div className="app">
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/cards" render={() => <Cards
+            userData={this.state.userData}
+            changePreview={this.changePreview}
+            handleOptionChange={this.handleOptionChange}
+            handleCollapsable={this.handleCollapsable}
+            collapsablesId={this.state.collapsablesId}
+            handleReset={this.handleReset}
+            isImageDefault={this.state.isImageDefault}
+            updateImage={this.updateImage}
+            getUrl={this.getUrl}
+            cardUrl={this.state.cardUrl}
+            isSend={this.state.isSend}
+            errors={this.state.errors}
+          />}
+          />
+        </Switch>
+        <Footer />
+      </div>
     );
   }
 }
