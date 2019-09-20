@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.6d5927ef.chunk.css",
+    "main.js": "./static/js/main.46ea2e82.chunk.js",
+    "main.js.map": "./static/js/main.46ea2e82.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.7321c57e.js",
+    "runtime~main.js.map": "./static/js/runtime~main.7321c57e.js.map",
+    "static/js/2.cb5d9d4d.chunk.js": "./static/js/2.cb5d9d4d.chunk.js",
+    "static/js/2.cb5d9d4d.chunk.js.map": "./static/js/2.cb5d9d4d.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.cf70a15007ac555e0d8642ed10f13d10.js": "./precache-manifest.cf70a15007ac555e0d8642ed10f13d10.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.6d5927ef.chunk.css.map": "./static/css/main.6d5927ef.chunk.css.map",
+    "static/media/App.scss": "./static/media/tarjetalogo.0118e311.svg"
+  }
+}
