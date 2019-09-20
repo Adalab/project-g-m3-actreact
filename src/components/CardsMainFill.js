@@ -83,7 +83,7 @@ class CardsMainFill extends React.Component {
               name="phone"
               placeholder="Ej: 555-55-55-55"
               onChange={changePreview}
-              value={phone}
+              value={phone || ''} 
             />
             <label
               htmlFor="email"

@@ -29,7 +29,7 @@ const validateForm = (userdata) => {
   }
 
   if (typeof fields.email !== "undefined") {
-    if (!fields.email.match(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)) {
+    if (!fields.email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)) {
       formIsValid = false;
       errors.email = "*Por favor, introduce un email válido.";
     }
