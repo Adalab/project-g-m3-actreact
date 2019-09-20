@@ -1,5 +1,4 @@
 import React from 'react';
-// import Footer from "./Footer";
 import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {
@@ -37,7 +36,7 @@ class Landing extends React.Component {
                       <div className="landing__-logo landing__icon-share"></div>
                       <p className="landing__li-text">Comparte</p>
                     </li>
-                  </ul>{" "}
+                  </ul>
                   <Link className="landing__main-button" to="/cards">
                     <div className="landing__button-text">COMENZAR</div>
                   </Link>
@@ -45,7 +44,6 @@ class Landing extends React.Component {
               </main>
             </div>
           </div>
-          {/* <Footer /> */}
         </div>
       </React.Fragment>
     );

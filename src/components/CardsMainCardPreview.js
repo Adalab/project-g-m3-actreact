@@ -57,7 +57,6 @@ class CardsMainCardPreview extends React.Component {
             <div className={`cards__img-wrapper cards__img-wrapper-op${palette}`}>
               <div className="img__text-box">
                 <h2 className="img__title img-text__title">{`${name || 'Nombre Apellido'}`}</h2>
-
                 <p className="img__text img-text__subtitle">
                   {`${job || 'Front-End Developer'}`}
                 </p>
@@ -92,7 +91,6 @@ class CardsMainCardPreview extends React.Component {
                       href={`mailto:${email || '#mail'} `}
                       target="_blank"
                       rel="noopener noreferrer"
-
                     >
                       <span className="span__text">
                         Si quieres enviarme un mail, visita este enlace.
@@ -105,7 +103,6 @@ class CardsMainCardPreview extends React.Component {
                       href={this.writeLinkedinUrl(linkedin)}
                       target="_blank"
                       rel="noopener noreferrer"
-
                     >
                       <span className="span__text">
                         Si quieres ver mi perfil de linkedIn, visita este

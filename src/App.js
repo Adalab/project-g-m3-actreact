@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import Landing from './components/Landing';
-import Cards from "./components/Cards";
+import Cards from './components/Cards';
 import { Route, Switch } from 'react-router-dom';
 import { defaultData } from './data/defaultData';
 import { sendInfo } from './services/sendInfo';

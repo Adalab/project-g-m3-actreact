@@ -1,8 +1,7 @@
 import React from 'react';
-import CardsHeader from "./CardsHeader";
-import CardsMain from "./CardsMain";
-// import Footer from "./Footer";
-import PropTypes from "prop-types";
+import CardsHeader from './CardsHeader';
+import CardsMain from './CardsMain';
+import PropTypes from 'prop-types';
 
 class Cards extends React.Component {
   render() {

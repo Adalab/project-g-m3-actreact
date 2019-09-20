@@ -1,9 +1,9 @@
-import React from "react";
-import CardsMainCardPreview from "./CardsMainCardPreview";
-import CardsMainDesign from "./CardsMainDesign";
-import CardsMainFill from "./CardsMainFill";
-import CardsMainShare from "./CardsMainShare";
-import PropTypes from "prop-types";
+import React from 'react';
+import CardsMainCardPreview from './CardsMainCardPreview';
+import CardsMainDesign from './CardsMainDesign';
+import CardsMainFill from './CardsMainFill';
+import CardsMainShare from './CardsMainShare';
+import PropTypes from 'prop-types';
 
 
 class CardsMain extends React.Component {
