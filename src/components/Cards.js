@@ -3,48 +3,46 @@ import CardsHeader from './CardsHeader';
 import CardsMain from './CardsMain';
 import PropTypes from 'prop-types';
 
-class Cards extends React.Component {
-  render() {
-    const {
-      userData,
-      changePreview,
-      handleOptionChange,
-      handleCollapsable,
-      collapsablesId,
-      handleReset,
-      updateImage,
-      isImageDefault,
-      getUrl,
-      cardUrl,
-      isSend,
-      errors
-    } = this.props;
+const Cards = props => {
+  const {
+    userData,
+    changePreview,
+    handleOptionChange,
+    handleCollapsable,
+    collapsablesId,
+    handleReset,
+    updateImage,
+    isImageDefault,
+    getUrl,
+    cardUrl,
+    isSend,
+    errors
+  } = props;
 
-    return (
-      <React.Fragment>
-        <div className="cards-wrapper">
-          <div className="cards__main-wrapper">
-            <CardsHeader
-            />
-            <CardsMain
-              userData={userData}
-              changePreview={changePreview}
-              handleOptionChange={handleOptionChange}
-              handleCollapsable={handleCollapsable}
-              collapsablesId={collapsablesId}
-              handleReset={handleReset}
-              isImageDefault={isImageDefault}
-              updateImage={updateImage}
-              getUrl={getUrl}
-              cardUrl={cardUrl}
-              isSend={isSend}
-              errors={errors}
-            />
-          </div>
+  return (
+    <React.Fragment>
+      <div className="cards-wrapper">
+        <div className="cards__main-wrapper">
+          <CardsHeader
+          />
+          <CardsMain
+            userData={userData}
+            changePreview={changePreview}
+            handleOptionChange={handleOptionChange}
+            handleCollapsable={handleCollapsable}
+            collapsablesId={collapsablesId}
+            handleReset={handleReset}
+            isImageDefault={isImageDefault}
+            updateImage={updateImage}
+            getUrl={getUrl}
+            cardUrl={cardUrl}
+            isSend={isSend}
+            errors={errors}
+          />
         </div>
-      </React.Fragment>
-    );
-  }
+      </div>
+    </React.Fragment>
+  );
 }
 
 Cards.propTypes = {

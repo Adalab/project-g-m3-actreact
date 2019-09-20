@@ -1,4 +1,3 @@
-
 const validateForm = (userdata) => {
   const fields = userdata;
   let errors = {};
@@ -22,7 +21,7 @@ const validateForm = (userdata) => {
   }
 
   if (typeof fields.job !== "undefined") {
-    if (!fields.job.match(/^[a-zA-Z-@#$%&]*$/)) {
+    if (!fields.job.match(/^[a-zA-Z-@#$%& ]*$/)) {
       formIsValid = false;
       errors.job = "*Este campo no admite caracteres especiales.";
     }
