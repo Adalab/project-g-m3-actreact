@@ -1,5 +1,5 @@
-import React from "react";
-import Footer from "./Footer";
+import React from 'react';
+// import Footer from "./Footer";
 import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {
@@ -45,7 +45,7 @@ class Landing extends React.Component {
               </main>
             </div>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </React.Fragment>
     );

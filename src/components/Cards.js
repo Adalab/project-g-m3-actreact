@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import CardsHeader from "./CardsHeader";
 import CardsMain from "./CardsMain";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import PropTypes from "prop-types";
 
 class Cards extends React.Component {
@@ -42,7 +42,6 @@ class Cards extends React.Component {
               errors={errors}
             />
           </div>
-          <Footer />
         </div>
       </React.Fragment>
     );
