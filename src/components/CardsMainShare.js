@@ -4,7 +4,6 @@ import Twitter from './Twitter';
 
 class CardsMainShare extends React.Component {
   render() {
-
     const {
       collapsablesId,
       handleCollapsable,
@@ -21,7 +20,7 @@ class CardsMainShare extends React.Component {
           </div>
           <div className="rollContainer-js">
             <div className="share-button-create">
-              <button className={`btn button-create ${cardUrl ? 'greyButton' : '' } `} type="button" onClick={getUrl} disabled={cardUrl}>
+              <button className={`btn button-create ${cardUrl ? 'greyButton' : ''} `} type="button" onClick={getUrl} disabled={cardUrl}>
                 <span className="share_button-icon">Crear tarjeta</span>
               </button>
             </div>
@@ -34,10 +33,10 @@ class CardsMainShare extends React.Component {
             <p className="share__title-twitter">La tarjeta ha sido creada:</p>
             <div className="link-twitter">
               <a className="twitter-url" href={cardUrl} target="_blank" rel="noopener noreferrer">
-              {cardUrl}
+                {cardUrl}
               </a>
             </div>
-           <Twitter cardUrl= {cardUrl}/>
+            <Twitter cardUrl={cardUrl} />
           </div>
           <div className={`line-bottom ${cardUrl ? '' : 'hidden'}`}></div>
         </div>

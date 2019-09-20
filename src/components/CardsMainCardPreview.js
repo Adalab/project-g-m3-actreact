@@ -8,13 +8,13 @@ class CardsMainCardPreview extends React.Component {
 
     this.writeLinkedinUrl = this.writeLinkedinUrl.bind(this);
     this.writeGithubUrl = this.writeGithubUrl.bind(this);
-
   }
+
   writeLinkedinUrl(inputValue) {
     if (inputValue.includes('@')) {
       const newInputValue = inputValue.replace('@', '');
       return 'https://www.linkedin.com/in/' + newInputValue;
-    }else {
+    } else {
       return 'https://www.linkedin.com/in/' + inputValue;
     }
   }
@@ -23,16 +23,15 @@ class CardsMainCardPreview extends React.Component {
     if (inputValue.includes('@')) {
       const newInputValue = inputValue.replace('@', '');
       return 'https://github.com/' + newInputValue;
-    }else {
+    } else {
       return 'https://github.com/' + inputValue;
     }
   }
 
   render() {
-    
-    const { 
-      userData, 
-      handleReset 
+    const {
+      userData,
+      handleReset
     } = this.props;
 
     const {
@@ -42,7 +41,7 @@ class CardsMainCardPreview extends React.Component {
       email,
       phone,
       linkedin,
-      github, 
+      github,
       photo
     } = userData;
 
@@ -50,7 +49,7 @@ class CardsMainCardPreview extends React.Component {
       <section className="cards__img-section">
         <div className="container">
           <div className="cards__wrapper">
-            <Button 
+            <Button
               btnClass={'btn cards__img-button reset js__reset img-btn__text'}
               action={handleReset}
               text={'reset'}
@@ -70,13 +69,12 @@ class CardsMainCardPreview extends React.Component {
                 <img
                   className="image js__profile-image"
                   src={photo}
-                  alt= {`Foto ${name || 'por defecto'}`}
+                  alt={`Foto ${name || 'por defecto'}`}
                 />
               </div>
               <div className="img__icons-box">
                 <ul className="icons__list img-text__title">
                   <li className={`icon2 ${phone ? '' : 'hidden'}`}>
-                    {" "}
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
                       href={`tel:${phone || '#phone'}`}
@@ -89,7 +87,6 @@ class CardsMainCardPreview extends React.Component {
                     </a>
                   </li>
                   <li className={`icon1 ${email ? '' : 'hidden'}`}>
-                    {" "}
                     <a
                       className="icon__anchor icons__item icon__mail icon__mail-blue "
                       href={`mailto:${email || '#mail'} `}
@@ -103,7 +100,6 @@ class CardsMainCardPreview extends React.Component {
                     </a>
                   </li>
                   <li className={`icon3 ${linkedin ? '' : 'hidden'}`}>
-                    {" "}
                     <a
                       className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
                       href={this.writeLinkedinUrl(linkedin)}
@@ -118,13 +114,11 @@ class CardsMainCardPreview extends React.Component {
                     </a>
                   </li>
                   <li className={`icon4 ${github ? '' : 'hidden'}`}>
-                    {" "}
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
                       href={this.writeGithubUrl(github)}
                       target="_blank"
                       rel="noopener noreferrer"
-
                     >
                       <span className="span__text">
                         Si quieres ver mi perfil de linkedIn, visita este

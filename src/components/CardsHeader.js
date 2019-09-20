@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class CardsHeader extends React.Component {
   render() {
@@ -12,10 +12,8 @@ class CardsHeader extends React.Component {
           </div>
         </Link>
       </header>
-    
-      );
-    }
+    );
   }
-
+}
 
 export default CardsHeader;

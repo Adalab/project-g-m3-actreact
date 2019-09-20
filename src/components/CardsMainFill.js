@@ -4,7 +4,6 @@ import GetImage from './GetImage';
 
 class CardsMainFill extends React.Component {
   render() {
-    
     const {
       collapsablesId,
       handleCollapsable,
@@ -69,8 +68,8 @@ class CardsMainFill extends React.Component {
               <GetImage
                 photo={photo}
                 isImageDefault={isImageDefault}
-                updateImage={updateImage} />
-              
+                updateImage={updateImage}
+              />
             </div>
             <label htmlFor="phone" className="form__fieldset-content">
               Teléfono

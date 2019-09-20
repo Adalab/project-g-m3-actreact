@@ -7,10 +7,7 @@ import PropTypes from "prop-types";
 
 
 class CardsMain extends React.Component {
-
-
   render() {
-    
     const {
       userData,
       handleOptionChange,
@@ -30,7 +27,6 @@ class CardsMain extends React.Component {
       <main className="cards__main">
         <form
           className="form__all-sections form__section-fill"
-          
         >
           <CardsMainCardPreview
             userData={userData}
@@ -60,9 +56,8 @@ class CardsMain extends React.Component {
               userData={userData}
               getUrl={getUrl}
               cardUrl={cardUrl}
-              isSend= {isSend}
+              isSend={isSend}
             />
-
 
           </div>
         </form>
