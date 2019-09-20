@@ -42,11 +42,12 @@ class CardsMainFill extends React.Component {
               className={`form__fieldset-content-gap name ${errors.name ? 'orange-error' : ''}`}
               id="name"
               name="name"
-              placeholder={errors.name ? errors.name : 'Ej: Sally Jill'}
+              placeholder="Ej: Sally Jill"
               required
               onChange={changePreview}
               value={name}
             />
+            {errors.name ? <p className="error-text">{errors.name}</p> : ''}
             <label
               htmlFor="job"
               className="form__fieldset-content job__label required"
@@ -58,11 +59,12 @@ class CardsMainFill extends React.Component {
               className={`form__fieldset-content-gap gap2 job ${errors.job ? 'orange-error' : ''}`}
               id="job"
               name="job"
-              placeholder={errors.job ? errors.job : 'Ej: Front-end unicorn'}
+              placeholder="Ej: Front-end unicorn"
               required
               onChange={changePreview}
               value={job}
             />
+            {errors.job ? <p className="error-text">{errors.job}</p> : ''}
             <div className="form__fieldset-add_img_wrapper">
               <p className="form__fieldset-add_img-text">Imagen de perfil</p>
               <GetImage
@@ -94,11 +96,12 @@ class CardsMainFill extends React.Component {
               className={`form__fieldset-content-gap mail ${errors.email ? 'orange-error' : ''}`}
               id="email"
               name="email"
-              placeholder={errors.email ? errors.email : 'Ej: sally-hill@gmail.com'}
+              placeholder="Ej: sally-hill@gmail.com"
               required
               onChange={changePreview}
               value={email}
             />
+            {errors.email ? <p className="error-text">{errors.email}</p> : ''}
             <label
               htmlFor="linkedin"
               className="form__fieldset-content linkedin__label required"
@@ -110,11 +113,12 @@ class CardsMainFill extends React.Component {
               className={`form__fieldset-content-gap linkedin_input ${errors.linkedin ? 'orange-error' : ''}`}
               id="linkedin"
               name="linkedin"
-              placeholder={errors.linkedin ? errors.linkedin : 'Ej: sally.hill'}
+              placeholder="Ej: sally.hill"
               required
               onChange={changePreview}
               value={linkedin}
             />
+            {errors.linkedin ? <p className="error-text">{errors.linkedin}</p> : ''}
             <label
               htmlFor="github"
               className="form__fieldset-content github__label required"
@@ -126,11 +130,12 @@ class CardsMainFill extends React.Component {
               className={`form__fieldset-content-gap github_input ${errors.github ? 'orange-error' : ''}`}
               id="github"
               name="github"
-              placeholder={errors.github ? errors.github : 'Ej: @sally-hill'}
+              placeholder="Ej: @sally-hill"
               required
               onChange={changePreview}
               value={github}
             />
+            {errors.github ? <p className="error-text">{errors.github}</p> : ''}
           </div>
           <div className="line-bottom"></div>
         </div>
