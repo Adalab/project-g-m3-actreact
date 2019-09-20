@@ -2,7 +2,7 @@
 const validateForm = (userdata) => {
   const fields = userdata;
   let errors = {};
-  let formIsValid = true; 
+  let formIsValid = true;
 
   if (!fields.name) {
     formIsValid = false;
@@ -68,4 +68,4 @@ const validateForm = (userdata) => {
   return { errors, formIsValid };
 };
 
-export {validateForm};
+export { validateForm };
