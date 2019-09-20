@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {
   render() {

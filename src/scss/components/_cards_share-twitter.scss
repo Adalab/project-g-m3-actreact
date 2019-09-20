@@ -14,6 +14,11 @@
 }
 .orange-text{
   color: $dull-orange;
+  /* loading dots */
+  &:after {
+    content: ' .';
+    animation: dots 1s steps(5, end) infinite;
+  }
 }
 .share__title-twitter::first-letter{
   text-transform: uppercase;
@@ -68,13 +73,37 @@
 }
 .content__twitter-container{
   .line-bottom{
-  border-bottom: solid 1px #d8d8d8;
-  margin-bottom: 0px;
-  margin-top: 30px;
+    border-bottom: solid 1px #d8d8d8;
+    margin: 0 30px 0 20px;
   }
 }
 @media all and (min-width:768px){
   .share__fieldset .container{
     margin-right: 30px;
+  }
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow:
+    .25em 0 0 rgba(0,0,0,0),
+    .5em 0 0 rgba(0,0,0,0);
+  }
+  40% {
+    color: $dull-orange;
+    text-shadow:
+    .25em 0 0 rgba(0,0,0,0),
+    .5em 0 0 rgba(0,0,0,0);
+  }
+  60% {
+    text-shadow:
+    .25em 0 0 $dull-orange,
+    .5em 0 0 rgba(0,0,0,0);
+  }
+  80%, 100% {
+    text-shadow:
+    .25em 0 0 $dull-orange,
+    .5em 0 0 $dull-orange;
   }
 }

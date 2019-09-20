@@ -6,19 +6,19 @@ import PropTypes from "prop-types";
 
 class Cards extends React.Component {
   render() {
-
-    const { 
+    const {
       userData,
-      changePreview, 
-      handleOptionChange, 
-      handleCollapsable, 
-      collapsablesId, 
+      changePreview,
+      handleOptionChange,
+      handleCollapsable,
+      collapsablesId,
       handleReset,
       updateImage,
       isImageDefault,
       getUrl,
       cardUrl,
-      isSend
+      isSend,
+      errors
     } = this.props;
 
     return (
@@ -39,6 +39,7 @@ class Cards extends React.Component {
               getUrl={getUrl}
               cardUrl={cardUrl}
               isSend={isSend}
+              errors={errors}
             />
           </div>
           <Footer />
@@ -53,13 +54,14 @@ Cards.propTypes = {
   changePreview: PropTypes.func.isRequired,
   handleOptionChange: PropTypes.func.isRequired,
   handleCollapsable: PropTypes.func.isRequired,
-  collapsablesId: PropTypes.string, 
+  collapsablesId: PropTypes.string,
   handleReset: PropTypes.func.isRequired,
   updateImage: PropTypes.func.isRequired,
   isImageDefault: PropTypes.bool.isRequired,
   getUrl: PropTypes.func.isRequired,
   cardUrl: PropTypes.string,
-  isSend: PropTypes.bool.isRequired
+  isSend: PropTypes.bool.isRequired,
+  errors: PropTypes.objectOf(PropTypes.string)
 };
 
 export default Cards;

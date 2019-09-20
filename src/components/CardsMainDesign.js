@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class CardsMainDesign extends React.Component {
   render() {
-    
     const {
       collapsablesId,
       handleCollapsable,
@@ -13,7 +12,7 @@ class CardsMainDesign extends React.Component {
 
     return (
       <fieldset className="design">
-        <div id="design" className={`container containerMother-js ${collapsablesId === 'design' ? 'open' : '' }`}>
+        <div id="design" className={`container containerMother-js ${collapsablesId === 'design' ? 'open' : ''}`}>
           <div className="design-title__container containerClick-js" data-id="design" onClick={handleCollapsable}>
             <h2 className="desing__title">Diseña</h2>
           </div>
@@ -29,8 +28,7 @@ class CardsMainDesign extends React.Component {
                     value="1"
                     name="colors"
                     checked={palette === 1}
-                    onChange ={handleOptionChange}
-                    
+                    onChange={handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -63,7 +61,7 @@ class CardsMainDesign extends React.Component {
                     value="2"
                     name="colors"
                     checked={palette === 2}
-                    onChange= {handleOptionChange}
+                    onChange={handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li
@@ -93,10 +91,10 @@ class CardsMainDesign extends React.Component {
                     className="input3"
                     id="colorsop3"
                     type="radio"
-                    value= "3"
+                    value="3"
                     name="colors"
                     checked={palette === 3}
-                    onChange= {handleOptionChange}
+                    onChange={handleOptionChange}
                   />
                   <ul className="colors__list">
                     <li

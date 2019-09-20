@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 class Button extends React.Component {
 
   render() {
-    
-    const { 
-      btnClass, 
-      action, 
+    const {
+      btnClass,
+      action,
       text
     } = this.props;
 
@@ -24,7 +23,7 @@ class Button extends React.Component {
 }
 
 Button.propTypes = {
-  btnClass:  PropTypes.string.isRequired,
+  btnClass: PropTypes.string.isRequired,
   handleReset: PropTypes.func,
   text: PropTypes.string.isRequired
 }

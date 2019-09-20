@@ -3,8 +3,9 @@ import './App.scss';
 import Landing from './components/Landing';
 import Cards from "./components/Cards";
 import { Route, Switch } from 'react-router-dom';
-import {defaultData} from './components/defaultData';
-import {sendInfo} from './services/sendInfo';
+import { defaultData } from './data/defaultData';
+import { sendInfo } from './services/sendInfo';
+import { validateForm } from './data/validateForm';
 
 
 class App extends React.Component {
@@ -15,7 +16,8 @@ class App extends React.Component {
       collapsablesId: 'design',
       userData: defaultData,
       isImageDefault: true,
-      isSend: false
+      isSend: false,
+      errors: {}
     };
 
     this.changePreview = this.changePreview.bind(this)
@@ -24,38 +26,54 @@ class App extends React.Component {
     this.handleReset = this.handleReset.bind(this)
     this.updateImage = this.updateImage.bind(this)
     this.getUrl = this.getUrl.bind(this)
-    
+    this.validation = this.validation.bind(this)
   }
 
-  getUrl(event){
-    event.preventDefault()
-    this.setState({
-      isSend: true
-    });
-    sendInfo(this.state.userData)
-    .then (data => {
-      console.log(data)
+  getUrl(event) {
+    event.preventDefault();
+    if (this.validation(this.state.userData)) {
       this.setState({
-        cardUrl: data.cardURL,
-        isSend: false
+        isSend: true,
+        collapsablesId: 'share'
       });
-    });
+      sendInfo(this.state.userData)
+        .then(data => {
+          this.setState({
+            cardUrl: data.cardURL,
+            isSend: false
+          });
+        });
+    }
   }
+
+  validation(userdata) {
+    const newValidation = validateForm(userdata);
+    const {
+      errors,
+      formIsValid
+    } = newValidation;
+
+    this.setState({
+      errors: errors,
+      collapsablesId: 'fill'
+    })
+    return formIsValid;
+  };
 
   updateImage(img) {
-   this.setState(prevState => {
+    this.setState(prevState => {
       const newUserData = {
-          ...prevState.userData,
-          photo: img
-        }
+        ...prevState.userData,
+        photo: img
+      }
       localStorage.setItem('lsUserData', JSON.stringify(newUserData));
-     return {
-      userData: newUserData,
-      isImageDefault: false
-     
-     }
-   });
- }
+      return {
+        userData: newUserData,
+        isImageDefault: false,
+        cardUrl: ''
+      }
+    });
+  }
 
   handleReset() {
     this.setState({
@@ -99,7 +117,8 @@ class App extends React.Component {
         userData: {
           ...prevState.userData,
           palette: value
-        }
+        },
+        cardUrl: ''
       };
     });
   }
@@ -115,10 +134,9 @@ class App extends React.Component {
       };
       localStorage.setItem('lsUserData', JSON.stringify(newUserData));
       return {
-        userData: newUserData
+        userData: newUserData,
+        cardUrl: ''
       };
-
-
     });
   }
 
@@ -133,24 +151,24 @@ class App extends React.Component {
 
   render() {
     return (
-    // 
-    <Switch>
-      <Route exact path="/" component={Landing} />
-      <Route path="/cards" render={() => <Cards
-        userData={this.state.userData}
-        changePreview={this.changePreview}
-        handleOptionChange={this.handleOptionChange}
-        handleCollapsable={this.handleCollapsable}
-        collapsablesId={this.state.collapsablesId}
-        handleReset={this.handleReset}
-        isImageDefault={this.state.isImageDefault}
-        updateImage={this.updateImage}
-        getUrl={this.getUrl}
-        cardUrl={this.state.cardUrl}
-        isSend={this.state.isSend}
-      />} 
-      />
-    </Switch>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/cards" render={() => <Cards
+          userData={this.state.userData}
+          changePreview={this.changePreview}
+          handleOptionChange={this.handleOptionChange}
+          handleCollapsable={this.handleCollapsable}
+          collapsablesId={this.state.collapsablesId}
+          handleReset={this.handleReset}
+          isImageDefault={this.state.isImageDefault}
+          updateImage={this.updateImage}
+          getUrl={this.getUrl}
+          cardUrl={this.state.cardUrl}
+          isSend={this.state.isSend}
+          errors={this.state.errors}
+        />}
+        />
+      </Switch>
     );
   }
 }

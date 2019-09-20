@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 class GetImage extends Component {
@@ -7,17 +7,17 @@ class GetImage extends Component {
 
     this.fr = new FileReader();
     this.myFileField = React.createRef();
-    
+
     this.handleFilePicker = this.handleFilePicker.bind(this);
     this.uploadImage = this.uploadImage.bind(this);
     this.getImage = this.getImage.bind(this);
   }
 
   handleFilePicker() {
-    this.myFileField.current.click(); 
+    this.myFileField.current.click();
   }
 
-  uploadImage(e){
+  uploadImage(e) {
     const myFile = e.currentTarget.files[0];
     this.fr.addEventListener('load', this.getImage);
     this.fr.readAsDataURL(myFile);
@@ -29,40 +29,40 @@ class GetImage extends Component {
   }
 
   getPreview(isDefault, photo) {
-    return (!isDefault) ? {backgroundImage: `url(${photo})`} : {};
+    return (!isDefault) ? { backgroundImage: `url(${photo})` } : {};
   }
 
   render() {
     const {
-      isImageDefault, 
+      isImageDefault,
       photo
-      } = this.props;
+    } = this.props;
 
     return (
-  
-        <Fragment>
-        <button 
-          className="form__fieldset-add_img-button js__profile-trigger" 
+
+      <Fragment>
+        <button
+          className="form__fieldset-add_img-button js__profile-trigger"
           type="button"
-          name="add_img" 
+          name="add_img"
           onClick={this.handleFilePicker}
-          >Añadir imagen
+        >Añadir imagen
         </button>
-        
-        <input 
+
+        <input
           type="file"
-          ref={this.myFileField} 
+          ref={this.myFileField}
           name="image"
           id="img-selector"
-          className="hidden js__profile-upload-btn" 
-          onChange={this.uploadImage} 
+          className="hidden js__profile-upload-btn"
+          onChange={this.uploadImage}
         />
-        
-        <div 
-        className="form__fieldset-add_img-mini_container js__profile-preview"
-        style={this.getPreview(isImageDefault, photo)}>
+
+        <div
+          className="form__fieldset-add_img-mini_container js__profile-preview"
+          style={this.getPreview(isImageDefault, photo)}>
         </div>
-       </Fragment>
+      </Fragment>
     );
   }
 }
