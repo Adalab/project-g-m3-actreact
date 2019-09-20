@@ -28,16 +28,16 @@ const validateForm = (userdata) => {
     }
   }
 
-  if (!fields.email) {
-    formIsValid = false;
-    errors.email = "*Por favor, introduce un email válido.";
-  }
-
   if (typeof fields.email !== "undefined") {
     if (!fields.email.match(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)) {
       formIsValid = false;
       errors.email = "*Por favor, introduce un email válido.";
     }
+  }
+
+  if (!fields.email) {
+    formIsValid = false;
+    errors.email = "*Por favor, introduce tu email.";
   }
 
   if (!fields.linkedin) {
