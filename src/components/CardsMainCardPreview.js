@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import Button from './Button';
 import PropTypes from 'prop-types';
 
 class CardsMainCardPreview extends React.Component {
@@ -7,13 +8,13 @@ class CardsMainCardPreview extends React.Component {
 
     this.writeLinkedinUrl = this.writeLinkedinUrl.bind(this);
     this.writeGithubUrl = this.writeGithubUrl.bind(this);
-
   }
+
   writeLinkedinUrl(inputValue) {
     if (inputValue.includes('@')) {
       const newInputValue = inputValue.replace('@', '');
       return 'https://www.linkedin.com/in/' + newInputValue;
-    }else {
+    } else {
       return 'https://www.linkedin.com/in/' + inputValue;
     }
   }
@@ -22,61 +23,60 @@ class CardsMainCardPreview extends React.Component {
     if (inputValue.includes('@')) {
       const newInputValue = inputValue.replace('@', '');
       return 'https://github.com/' + newInputValue;
-    }else {
+    } else {
       return 'https://github.com/' + inputValue;
     }
   }
 
   render() {
+    const {
+      userData,
+      handleReset
+    } = this.props;
+
+    const {
+      palette,
+      name,
+      job,
+      email,
+      phone,
+      linkedin,
+      github,
+      photo
+    } = userData;
+
     return (
       <section className="cards__img-section">
         <div className="container">
           <div className="cards__wrapper">
-            <button
-              type="button"
-              className="btn cards__img-button reset js__reset img-btn__text"
-            >
-              reset
-            </button>
-            <div className={`cards__img-wrapper cards__img-wrapper-op${this.props.userData.palette}`}>
+            <Button
+              btnClass={'btn cards__img-button reset js__reset img-btn__text'}
+              action={handleReset}
+              text={'reset'}
+            />
+            <div className={`cards__img-wrapper cards__img-wrapper-op${palette}`}>
               <div className="img__text-box">
-                <h2 className="img__title img-text__title">{`${this.props.userData.name || 'Nombre Apellido'}`}</h2>
-
+                <h2 className="img__title img-text__title">{`${name || 'Nombre Apellido'}`}</h2>
                 <p className="img__text img-text__subtitle">
-                  {`${this.props.userData.position || 'Front-End Developer'}`}
+                  {`${job || 'Front-End Developer'}`}
                 </p>
               </div>
               <div
                 className="profile__image js__profile-container-image cards__img"
-                style={{ backgroundImage: `url("${this.props.userData.image}")` }}
+                style={{ backgroundImage: `url("${photo}")` }}
               >
                 <img
                   className="image js__profile-image"
-                  src={this.props.userData.image}
-                  alt="Imagen por defecto"
+                  src={photo}
+                  alt={`Foto ${name || 'por defecto'}`}
                 />
               </div>
               <div className="img__icons-box">
                 <ul className="icons__list img-text__title">
-                  <li className={`icon1 ${this.props.userData.email ? '' : 'hidden'}`}>
-                    {" "}
-                    <a
-                      className="icon__anchor icons__item icon__mail icon__mail-blue "
-                      href={`mailto:${this.props.userData.email || '#mail'} `}
-                      target="_blank"
-                      rel="noopener noreferrer"
-
-                    >
-                      <span className="span__text">
-                        Si quieres enviarme un mail, visita este enlace.
-                      </span>
-                    </a>
-                  </li>
-                  <li className={`icon2 ${this.props.userData.telf ? '' : 'hidden'}`}>
-                    {" "}
+                  <li className={`icon2 ${phone ? '' : 'hidden'}`}>
                     <a
                       className="icon__anchor icons__item icon__mobile icon__mobile-blue  "
-                      href={`tel:${this.props.userData.telf || '#phone'}`}
+                      href={`tel:${phone || '#phone'}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -85,14 +85,24 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon3 ${this.props.userData.linkedin ? '' : 'hidden'}`}>
-                    {" "}
+                  <li className={`icon1 ${email ? '' : 'hidden'}`}>
                     <a
-                      className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
-                      href={this.writeLinkedinUrl(this.props.userData.linkedin)}
+                      className="icon__anchor icons__item icon__mail icon__mail-blue "
+                      href={`mailto:${email || '#mail'} `}
                       target="_blank"
                       rel="noopener noreferrer"
-
+                    >
+                      <span className="span__text">
+                        Si quieres enviarme un mail, visita este enlace.
+                      </span>
+                    </a>
+                  </li>
+                  <li className={`icon3 ${linkedin ? '' : 'hidden'}`}>
+                    <a
+                      className="icon__anchor icons__item icon__linkedin icon__linkedin-blue "
+                      href={this.writeLinkedinUrl(linkedin)}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <span className="span__text">
                         Si quieres ver mi perfil de linkedIn, visita este
@@ -100,14 +110,12 @@ class CardsMainCardPreview extends React.Component {
                       </span>
                     </a>
                   </li>
-                  <li className={`icon4 ${this.props.userData.github ? '' : 'hidden'}`}>
-                    {" "}
+                  <li className={`icon4 ${github ? '' : 'hidden'}`}>
                     <a
                       className="icon__anchor icons__item icon__github icon__github-blue  "
-                      href={this.writeGithubUrl(this.props.userData.github)}
+                      href={this.writeGithubUrl(github)}
                       target="_blank"
                       rel="noopener noreferrer"
-
                     >
                       <span className="span__text">
                         Si quieres ver mi perfil de linkedIn, visita este
@@ -129,10 +137,10 @@ CardsMainCardPreview.propTypes = {
   userData: PropTypes.shape({
     palette: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    telf: PropTypes.string,
+    phone: PropTypes.string,
     linkedin: PropTypes.string.isRequired,
     github: PropTypes.string.isRequired
   })

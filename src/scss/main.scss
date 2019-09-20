@@ -20,16 +20,12 @@
   box-sizing: border-box;
 }
 .div-page{
-  min-height: 100vh;
+  flex-grow: 1;
   display: grid;
   grid-template-rows: (1fr auto);
 }
 .landing__page-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: $color-landing-bg;
-  position: relative;
 }
 .hidden{
   display: none;

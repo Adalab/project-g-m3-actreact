@@ -23,50 +23,50 @@
   padding-top: 21px;
   box-shadow: 0 1px 10px 0 $black-20, 0 1px 3px 0  rgba(0, 0, 0, 0.35);
   border-radius: 2px;
-    .img__text-box{
-      padding: 0 20px 0 9px;
-      margin-bottom: 10px;
-    }
-    .icon__mobile{
-      @include bg-img;
-      background-size: 13px;
-    }
-    .icon__mail{
-      @include bg-img;
-      background-size: 16px;
-    }
-    .icon__linkedin{
-      @include bg-img;
-      background-size: 16px;
-    }
-    .icon__github{
-      @include bg-img;
-      background-size: 16px;
-    }
+  .img__text-box{
+    padding: 0 20px 0 9px;
+    margin-bottom: 10px;
+  }
+  .icon__mobile{
+    @include bg-img;
+    background-size: 13px;
+  }
+  .icon__mail{
+    @include bg-img;
+    background-size: 16px;
+  }
+  .icon__linkedin{
+    @include bg-img;
+    background-size: 16px;
+  }
+  .icon__github{
+    @include bg-img;
+    background-size: 16px;
+  }
 }
 .cards__img-wrapper-op1{
-    .img__text-box{
-      border-left: solid 5px $dirty-blue;
-      .img__title{
-        color: #114e4e;
-      }
+  .img__text-box{
+    border-left: solid 5px $dirty-blue;
+    .img__title{
+      color: #114e4e;
     }
-    .icon__mobile{
-      background-image: url(../../images/mobile-alt-solid.svg);
-      border: solid 2px $hospital-green;
-    }
-    .icon__mail{
-      background-image: url(../../images/envelope.svg);
-      border: solid 2px $hospital-green;
-    }
-    .icon__linkedin{
-      background-image: url(../../images/linkedin-in-brands.svg);
-      border: solid 2px $hospital-green;
-    }
-    .icon__github{
-      background-image: url(../../images/github-alt-brands.svg);
-      border: solid 2px $hospital-green;  border:solid 2px $hospital-green;
-    }
+  }
+  .icon__mobile{
+    background-image: url(../../images/mobile-alt-solid.svg);
+    border: solid 2px $hospital-green;
+  }
+  .icon__mail{
+    background-image: url(../../images/envelope.svg);
+    border: solid 2px $hospital-green;
+  }
+  .icon__linkedin{
+    background-image: url(../../images/linkedin-in-brands.svg);
+    border: solid 2px $hospital-green;
+  }
+  .icon__github{
+    background-image: url(../../images/github-alt-brands.svg);
+    border: solid 2px $hospital-green;  border:solid 2px $hospital-green;
+  }
 }
 .cards__img-wrapper-op2{
   .img__text-box{
@@ -119,11 +119,6 @@
 .reset{
   position: relative;
   color: $color-card-img-section-p;
-  @media all and (min-width:768px)
-  {position: absolute;
-    top: -50px;
-    left: 0;
-  };
 }
 .reset:before{
   content: "\f2ed";
@@ -175,7 +170,7 @@
   margin-right: 10px;
   padding-top: 31px;
   height: 1px;
-  width: 32px;
+  width: 34px;
   @include centered();
   position: relative;
   overflow: hidden;
